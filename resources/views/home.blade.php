@@ -14,16 +14,18 @@
         $showSlide = Config::get('products.slide');
 
         $index = 20;
+        $cateIndex = 14;
         $cateId = 1;
     @endphp
 
     {{-- slides --}}
-   <div class="slides relative mx-auto pt-[20px] mb-[50px] mt-[50px]
-    xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full
-    xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:ml-0">
+   <div class="slides relative mx-auto pt-[20px] mb-[50px]
+   mt-[100px] mobile:mt-[50px]
+    xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%]
+    xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:mx-auto">
 {{--         button prev--}}
        <div class="button__prev">
-           <i class="fas fa-chevron-left z-10
+           <i class="fas fa-chevron-left z-[9]
            flex items-center justify-center
            w-[36px] h-[36px]
            absolute left-[-15px] top-[50%]
@@ -32,7 +34,7 @@
 
 {{--         button next--}}
        <div class="button__next">
-           <i class="fas fa-chevron-right z-10
+           <i class="fas fa-chevron-right z-[9]
            flex items-center justify-center
            w-[36px] h-[36px]
            absolute right-[-15px] top-[50%]
@@ -53,12 +55,14 @@
    </div>
 
     {{-- categories --}}
-    <div class="menu xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full mx-auto py-[20px]">
+    <div class="menu xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%] mx-auto py-[20px]">
         <div class="menu__title flex flex-row justify-between mb-[20px]">
-            <p class="text-[24px] leading-[32px] font-bold">
+            <p class="text-[24px] leading-[32px] font-bold
+            mobile:text-[18px] mobile:leading-[26px] mobile:text-[#2c2c2d]">
                 What would you like to find?
             </p>
-            <div class="menu__modal">
+            <div class="menu__modal
+            mobile:hidden">
                 <!-- Button trigger modal -->
                 <div class="px-6 py-2.5
                   text-[#008f79] text-[16px] leading-[24px]
@@ -71,7 +75,7 @@
                 <!-- Modal -->
                 <div class="modal fade hidden fixed top-0 left-0 w-full h-full
                 outline-none overflow-x-hidden overflow-y-auto
-                flex justify-start z-[9999]"
+                flex justify-start" style="background-color: rgba(0, 0, 0, 0.5)"
                      id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog relative max-w-[440px] pointer-events-none
                     my-0 mt-0" style="margin-left: calc(100% - 440px)">
@@ -177,82 +181,109 @@
             </div>
         </div>
 
-        <div class="menu__items flex flex-row justify-between gap-[7px]">
-            <a href="http://www.carousell.sg"
-                class="property flex flex-col justify-center items-center
-            bg-[#f0f1f1] px-[35px] pt-[25px] pb-[45px] rounded-lg
+        <div class="menu__items overflow-y-hidden">
+           <div class="flex flex-row overflow-y-auto justify-between gap-[7px] mobile:hidden">
+               <a href="http://www.carousell.sg"
+                  class="property flex flex-col justify-center items-center text-center
+            bg-[#f0f1f1] px-[35px] pt-[25px] pb-[45px] rounded-lg w-[13%]
             hover:translate-y-[-7px] transition-transform">
-                <img src="https://media.karousell.com/media/photos/country-collections/icons/73/2020/01/22/56-Property-cxxhdpi_1579664037.67.png"
-                     alt="property"
-                     class="w-[72px] mb-[10px]">
-                <p class="text-img">Property</p>
-            </a>
+                   <img src="https://media.karousell.com/media/photos/country-collections/icons/73/2020/01/22/56-Property-cxxhdpi_1579664037.67.png"
+                        alt="property"
+                        class="w-[72px] mb-[10px]">
+                   <p class="text-img">Property</p>
+               </a>
 
-            <a href="http://www.carousell.sg"
-               class="property flex flex-col justify-center items-center
-            bg-[#f0f1f1] px-[35px] pt-[25px] pb-[45px] rounded-lg
+               <a href="http://www.carousell.sg"
+                  class="property flex flex-col justify-center items-center
+            bg-[#f0f1f1] px-[35px] pt-[25px] pb-[45px] rounded-lg w-[13%] text-center
             hover:translate-y-[-7px] transition-transform">
-                <img src="https://media.karousell.com/media/photos/country-collections/icons/22/2020/01/22/56-Cars-cxxhdpi_1579663915.34.png"
-                     alt="property"
-                     class="w-[72px] mb-[10px]">
-                <p class="text-img">Cars</p>
-            </a>
+                   <img src="https://media.karousell.com/media/photos/country-collections/icons/22/2020/01/22/56-Cars-cxxhdpi_1579663915.34.png"
+                        alt="property"
+                        class="w-[72px] mb-[10px]">
+                   <p class="text-img">Cars</p>
+               </a>
 
-            <a href="http://www.carousell.sg"
-               class="property flex flex-col justify-center items-center
-            bg-[#f0f1f1] px-[35px] pt-[25px] pb-[45px] rounded-lg
+               <a href="http://www.carousell.sg"
+                  class="property flex flex-col justify-center items-center
+            bg-[#f0f1f1] px-[35px] pt-[25px] pb-[35px] rounded-lg w-[13%] text-center
             hover:translate-y-[-7px] transition-transform">
-                <img src="https://media.karousell.com/media/photos/country-collections/icons/1908/2019/08/01/56-Home_Services-c_1564657665.98.png"
-                     alt="Home Services"
-                     class="w-[72px] mb-[10px]">
-                <p class="text-img">Home Services</p>
-            </a>
+                   <img src="https://media.karousell.com/media/photos/country-collections/icons/1908/2019/08/01/56-Home_Services-c_1564657665.98.png"
+                        alt="Home Services"
+                        class="w-[72px] mb-[10px]">
+                   <p class="text-img">Home Services</p>
+               </a>
 
-            <a href="http://www.carousell.sg"
-               class="property flex flex-col justify-center items-center
-            bg-[#f0f1f1] px-[35px] pt-[25px] pb-[45px] rounded-lg
+               <a href="http://www.carousell.sg"
+                  class="property flex flex-col justify-center items-center
+            bg-[#f0f1f1] px-[35px] pt-[25px] pb-[35px] rounded-lg w-[13%] text-center
             hover:translate-y-[-7px] transition-transform">
-                <img src="https://media.karousell.com/media/photos/country-collections/icons/main_v2/02_mobile_phones_gadgets.png"
-                     alt="property"
-                     class="w-[72px] mb-[10px]">
-                <p class="text-img">Mobile Phone & Gadgets</p>
-            </a>
+                   <img src="https://media.karousell.com/media/photos/country-collections/icons/main_v2/02_mobile_phones_gadgets.png"
+                        alt="property"
+                        class="w-[72px] mb-[10px]">
+                   <p class="text-img">Mobile Phone & Gadgets</p>
+               </a>
 
-            <a href="http://www.carousell.sg"
-               class="property flex flex-col justify-center items-center
-            bg-[#f0f1f1] px-[35px] pt-[25px] pb-[45px] rounded-lg
+               <a href="http://www.carousell.sg"
+                  class="property flex flex-col justify-center items-center
+            bg-[#f0f1f1] px-[35px] pt-[25px] pb-[35px] rounded-lg w-[13%] text-center
             hover:translate-y-[-7px] transition-transform">
-                <img src="https://media.karousell.com/media/photos/country-collections/icons/main_v2/08_womens_fashion.png"
-                     alt="property"
-                     class="w-[72px] mb-[10px]">
-                <p class="text-img">Women's Fashion</p>
-            </a>
+                   <img src="https://media.karousell.com/media/photos/country-collections/icons/main_v2/08_womens_fashion.png"
+                        alt="property"
+                        class="w-[72px] mb-[10px]">
+                   <p class="text-img">Women's Fashion</p>
+               </a>
 
-            <a href="http://www.carousell.sg"
-               class="property flex flex-col justify-center items-center
-            bg-[#f0f1f1] px-[35px] pt-[25px] pb-[45px] rounded-lg
+               <a href="http://www.carousell.sg"
+                  class="property flex flex-col justify-center items-center
+            bg-[#f0f1f1] px-[35px] pt-[25px] pb-[35px] rounded-lg w-[13%] text-center
             hover:translate-y-[-7px] transition-transform">
-                <img src="https://media.karousell.com/media/photos/country-collections/icons/main_v2/09_mens_fashion.png"
-                     alt="property"
-                     class="w-[72px] mb-[10px]">
-                <p class="text-img">Women's Man</p>
-            </a>
+                   <img src="https://media.karousell.com/media/photos/country-collections/icons/main_v2/09_mens_fashion.png"
+                        alt="property"
+                        class="w-[72px] mb-[10px]">
+                   <p class="text-img">Women's Man</p>
+               </a>
 
-            <a href="http://www.carousell.sg"
-               class="property flex flex-col justify-center items-center
-            bg-[#f0f1f1] px-[35px] pt-[25px] pb-[45px] rounded-lg
+               <a href="http://www.carousell.sg"
+                  class="property flex flex-col justify-center items-center
+            bg-[#f0f1f1] px-[35px] pt-[25px] pb-[35px] rounded-lg w-[13%] text-center
             hover:translate-y-[-7px] transition-transform">
-                <img src="https://media.karousell.com/media/photos/country-collections/icons/main_v2/10_luxury.png"
-                     alt="property"
-                     class="w-[72px] mb-[10px]">
-                <p class="text-img">Luxury</p>
-            </a>
+                   <img src="https://media.karousell.com/media/photos/country-collections/icons/main_v2/10_luxury.png"
+                        alt="property"
+                        class="w-[72px] mb-[10px]">
+                   <p class="text-img">Luxury</p>
+               </a>
+           </div>
+            <div class="xl:hidden lg:hidden md:hidden sm:hidden
+            mobile:flex mobile:overflow-y-auto mobile:flex-col mobile:gap-[10px]">
+                <div class="inline-flex text-center">
+                    @foreach($showCategories as $key => $ca)
+                       @if($key < $cateIndex)
+                            <div class="w-[120px] px-[20px]">
+                                <img src="{{$ca}}" class="p-[5px] bg-[#f0f1f1]" style="border-radius: 50%">
+                                <p>This category</p>
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+                <div class="inline-flex text-center">
+                    @foreach($showCategories as $key => $ca)
+                        @if($key >= $cateIndex)
+                            <div class="w-[120px] px-[20px]">
+                                <img src="{{$ca}}" class="p-[5px] bg-[#f0f1f1]" style="border-radius: 50%">
+                                <p>This category</p>
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+            </div>
+
         </div>
 
     </div>
 
 {{-- trending now --}}
-    <div class="trending xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full mx-auto py-[20px] relative">
+    <div class="trending xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:hidden
+    mx-auto py-[20px] relative">
         <div class="trending__title flex justify-between items-center mb-[30px]">
             <p class="text-[24px] leading-[32px] font-bold">
                 Trending now
@@ -356,7 +387,7 @@
             </div>
             {{-- button prev--}}
             <div class="bi__prev">
-                <i class="fas fa-chevron-left z-10
+                <i class="fas fa-chevron-left z-[9]
                    flex items-center justify-center
                    w-[36px] h-[36px]
                    absolute left-[-15px] top-[50%]
@@ -365,7 +396,7 @@
 
             {{-- button next--}}
             <div class="bi__next">
-                <i class="fas fa-chevron-right z-10
+                <i class="fas fa-chevron-right z-[9]
                    flex items-center justify-center
                    w-[36px] h-[36px] right-[-15px]
                    absolute top-[50%]
@@ -422,7 +453,7 @@
             </div>
 {{--            button prev--}}
             <div class="co__prev">
-                <i class="fas fa-chevron-left z-10
+                <i class="fas fa-chevron-left z-[9]
                    flex items-center justify-center
                    w-[36px] h-[36px]
                    absolute left-[-15px] top-[50%]
@@ -431,7 +462,7 @@
 
 {{--            button next--}}
             <div class="co__next">
-                <i class="fas fa-chevron-right z-10
+                <i class="fas fa-chevron-right z-[9]
                    flex items-center justify-center
                    w-[36px] h-[36px] right-[-15px]
                    absolute top-[50%]
@@ -488,7 +519,7 @@
             </div>
 {{--            button prev--}}
             <div class="le__prev">
-                <i class="fas fa-chevron-left z-10
+                <i class="fas fa-chevron-left z-[9]
                    flex items-center justify-center
                    w-[36px] h-[36px]
                    absolute left-[-15px] top-[50%]
@@ -497,7 +528,7 @@
 
 {{--            button next--}}
             <div class="le__next">
-                <i class="fas fa-chevron-right z-10
+                <i class="fas fa-chevron-right z-[9]
                    flex items-center justify-center
                    w-[36px] h-[36px] right-[-15px]
                    absolute top-[50%]
@@ -554,7 +585,7 @@
             </div>
 {{--            button prev--}}
             <div class="ik__prev">
-                <i class="fas fa-chevron-left z-10
+                <i class="fas fa-chevron-left z-[9]
                    flex items-center justify-center
                    w-[36px] h-[36px]
                    absolute left-[-15px] top-[50%]
@@ -563,7 +594,7 @@
 
 {{--            button next--}}
             <div class="ik__next">
-                <i class="fas fa-chevron-right z-10
+                <i class="fas fa-chevron-right z-[9]
                    flex items-center justify-center
                    w-[36px] h-[36px] right-[-15px]
                    absolute top-[50%]
@@ -620,7 +651,7 @@
             </div>
 {{--            button prev--}}
             <div class="bro__prev">
-                <i class="fas fa-chevron-left z-10
+                <i class="fas fa-chevron-left z-[9]
                    flex items-center justify-center
                    w-[36px] h-[36px]
                    absolute left-[-15px] top-[50%]
@@ -629,7 +660,7 @@
 
 {{--            button next--}}
             <div class="bro__next">
-                <i class="fas fa-chevron-right z-10
+                <i class="fas fa-chevron-right z-[9]
                    flex items-center justify-center
                    w-[36px] h-[36px] right-[-15px]
                    absolute top-[50%]
@@ -687,7 +718,7 @@
 
 {{--            button prev--}}
             <div class="pl__prev">
-                <i class="fas fa-chevron-left z-10
+                <i class="fas fa-chevron-left z-[9]
                    flex items-center justify-center
                    w-[36px] h-[36px]
                    absolute left-[-15px] top-[50%]
@@ -696,7 +727,7 @@
 
 {{--            button next--}}
             <div class="pl__next">
-                <i class="fas fa-chevron-right z-10
+                <i class="fas fa-chevron-right z-[9]
                    flex items-center justify-center
                    w-[36px] h-[36px] right-[-15px]
                    absolute top-[50%]
@@ -706,7 +737,7 @@
     </div>
 
 {{-- slash price --}}
-    <div class="trending xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full mx-auto py-[20px] relative">
+    <div class="trending xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%] mx-auto py-[20px] relative">
         <div class="trending__title flex justify-between items-center mb-[30px]">
             <p class="text-[24px] leading-[32px] font-bold">
                 Slashed Prices
@@ -714,7 +745,8 @@
         </div>
 
         {{-- topic items--}}
-        <div class="slashed__price overflow-hidden flex flex-row nowrap relative">
+        <div class="slashed__price overflow-hidden flex flex-row nowrap relative
+        mobile:overflow-y-auto" onresize="slashUnSlick()">
             @foreach($showSlash as $slash)
                 <div class="bi p-[5px] w-[20%] hover:shadow-2xl flex flex-col justify-between h-[450px]">
                     <div>
@@ -763,7 +795,7 @@
 
         {{-- button prev--}}
         <div class="slash__prev">
-            <i class="fas fa-chevron-left z-10
+            <i class="fas fa-chevron-left z-[9]
            flex items-center justify-center
            w-[36px] h-[36px]
            absolute left-[-15px] top-[50%]
@@ -772,7 +804,7 @@
 
         {{-- button next--}}
         <div class="slash__next">
-            <i class="fas fa-chevron-right z-10
+            <i class="fas fa-chevron-right z-[9]
            flex items-center justify-center
            w-[36px] h-[36px] right-[-15px]
            absolute top-[50%]
@@ -782,7 +814,7 @@
     </div>
 
 {{-- Recommended For You--}}
-    <div class="trending xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full mx-auto py-[20px]">
+    <div class="trending xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%] mx-auto py-[20px]">
         <div class="trending__title flex justify-between items-center mb-[30px]">
             <p class="text-[24px] leading-[32px] font-bold">
                 Recommended For You
@@ -790,7 +822,8 @@
         </div>
 
         {{-- topic items--}}
-        <div class="recommend overflow-hidden grid grid-cols-4 relative">
+        <div class="recommend overflow-hidden grid grid-cols-4 relative
+        mobile:grid-cols-2">
             @foreach($showRecommend as $re)
                 <div class="bi p-[5px] hover:shadow-2xl flex flex-col justify-between h-[450px] mb-[20px]">
                         <div>
@@ -853,7 +886,7 @@
 
 {{-- home footer--}}
     <div class="home__footer my-[100px] mx-auto
-    xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full
+    xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:hidden
     xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:ml-0">
         <div class="sab mb-[50px]">
             <p class="sab__title flex justify-center items-center
@@ -978,4 +1011,5 @@
     </div>
     <script type="text/javascript" src='./js/home.js'></script>
 @endsection
+
 

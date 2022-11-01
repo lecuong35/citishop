@@ -2,8 +2,8 @@
     $links = Config::get('products.footerLinks');
     $flags = Config::get('products.footerFlags');
 @endphp
-<div class="footer">
-    <div class="footer__banner">
+<div class="footer mobile:w-[98%] mx-auto">
+    <div class="footer__banner mobile:hidden">
         <div class="banner__items flex justify-center items-center mb-[100px]">
             <img src="https://storage.googleapis.com/carousell-sl/homescreens/main/carousell_qrcode_cats.png"
             class="">
@@ -31,9 +31,9 @@
             </div>
         </div>
     </div>
-    <div class="footer__links mb-[30px]
+    <div class="footer__links mb-[30px] mx-auto
         xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full
-        xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:ml-0">
+        xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:mx-0">
         <p class="text-[12px] leading-[20px] font-bold mb-[20px]">
             Top searches
         </p>
@@ -52,15 +52,23 @@
     <div class="footer__links mb-[30px]
         xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full
         xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:ml-0">
-        <p class="text-[12px] leading-[20px] font-bold mb-[10px]">
-            Popular Used Car By Brand
-        </p>
-        @foreach($links as $link)
-            <a href="http://carousell.sg" class="text-[12px] leading-[20px] text-[#57585a] hover:text-[#00bfa2] hover:underline">
-                {{$link}}
-            </a>
-            <i class="fa fa-circle scale-[0.4]"></i>
-        @endforeach
+        <label class="mobile:flex mobile:justify-between">
+            <p class="text-[12px] leading-[20px] font-bold mb-[10px]">
+                Popular Used Car By Brand
+            </p>
+            <i class="fa fa-chevron-down
+            xl:hidden lg:hidden md:hidden sm:hidden
+            mobile:block"></i>
+        </label>
+
+        <div>
+            @foreach($links as $link)
+                <a href="http://carousell.sg" class="text-[12px] leading-[20px] text-[#57585a] hover:text-[#00bfa2] hover:underline">
+                    {{$link}}
+                </a>
+                <i class="fa fa-circle scale-[0.4]"></i>
+            @endforeach
+        </div>
     </div>
     <div class="footer__links mb-[30px]
         xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full
@@ -141,7 +149,7 @@
                     Carousell
                 </p>
             </div>
-            <div class="block">
+            <div class="block mobile:hidden">
                 @foreach($links as $key => $link)
                    @if($key < 7)
                         <a href="http://carousell.sg" class="text-[12px] leading-[20px] text-[#57585a] hover:text-[#00bfa2] hover:underline">
@@ -154,7 +162,7 @@
         </div>
 
         <div class="flex justify-between items-center">
-            <div class="flex gap-[5px]">
+            <div class="flex gap-[5px] mobile:hidden">
                 @foreach($flags as $flag)
                     <a href="http://carousell.sg">
                         <img src="{{$flag}}" class="w-[24px] h-[24px]">

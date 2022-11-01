@@ -7,21 +7,27 @@ $('.slides__show').slick({
     prevArrow: '.button__prev',
     responsive: [
         {
-            breakpoint: 480,
-            setting: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 5,
+                slidesToScroll: 5,
             }
-
         },
         {
-            breakpoint: 1024,
-            setting: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3
             }
-
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
         }
+
     ]
 });
 
@@ -39,17 +45,44 @@ $('.slashed__price').slick({
     slidesToScroll: 2,
     nextArrow: '.slash__next',
     prevArrow: '.slash_prev',
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 5,
+                slidesToScroll: 2,
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        }
+    ]
 });
 
+// function slashUnSLick() {
+//     $('.slashed__price').unslick();
+// }
 
-let count = 0;
+
+let count1 = 0;
 let next = document.getElementById("next");
 let prev = document.getElementById("prev");
 
 $('.button__prev').click( function () {
-    count--;
-    if(count < 0) {
-        count = 0;
+    count1--;
+    if(count1 < 0) {
+        count1 = 0;
         prev.style.display = "none";
         next.style.display = "flex";
     }
@@ -59,9 +92,9 @@ $('.button__prev').click( function () {
     }
 })
 $('.button__next').click( function () {
-    count++;
-    if(count > 2) {
-        count = 2;
+    count1++;
+    if(count1 > 2) {
+        count1 = 2;
         next.style.display = "none";
         prev.style.display = "flex";
     }

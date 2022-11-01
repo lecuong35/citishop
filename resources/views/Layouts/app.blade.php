@@ -28,6 +28,11 @@
     <title>Carousell</title>
 </head>
 <body class="font-roboto">
+<button class="bg-[#ff2636] rounded-sm px-[26px] py-[14px] rounded-[30px]
+            text-white font-bold text-[18px] leading-[24px] hidden
+            mobile:fixed top-[90%] right-[15px] mobile:block z-[9999]">
+    Sell +
+</button>
 {{-- navbar --}}
 @include('components.navbar')
 {{--@include('Layouts.search')--}}
