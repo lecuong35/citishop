@@ -329,5 +329,38 @@ return [
         'Like new',
         'Well used',
         'Heavily used',
+        ],
+
+    'slide-product' => [
+        'https://media.karousell.com/media/photos/products/2022/10/17/24_kids_bicycle_1665979673_4b6fdd1c_progressive.jpg',
+        'https://media.karousell.com/media/photos/products/2022/10/17/24_kids_bicycle_1665979673_27ca4a0c_progressive.jpg',
+        'https://media.karousell.com/media/photos/products/2022/10/17/24_kids_bicycle_1665979673_d11bf250_progressive.jpg',
+        'https://media.karousell.com/media/photos/products/2022/10/17/24_kids_bicycle_1665979673_0b46666e_progressive.jpg',
+        'https://media.karousell.com/media/photos/products/2022/10/17/24_kids_bicycle_1665979673_3aab2302_progressive.jpg',
+    ],
+
+    'similar-product' => [
+        'https://media.karousell.com/media/photos/products/2022/10/8/kids_bicycle_for_sale_1665215764_0cd02154_progressive_thumbnail.jpg',
+        'https://media.karousell.com/media/photos/products/2022/10/25/kids_bicycle_16_1666683031_9b54d22b_progressive_thumbnail.jpg',
+        'https://media.karousell.com/media/photos/products/2022/10/9/kids_bicycle_with_training_whe_1665301924_26d0f63c_progressive_thumbnail.jpg',
+        'https://media.karousell.com/media/photos/products/2022/10/21/decathlon_kid_bicycle_1666368981_d793e3b1_progressive_thumbnail.jpg',
+        'https://media.karousell.com/media/photos/products/2022/10/21/decathlon_btwin_wendy_pony_bic_1666349028_e28de11c_progressive_thumbnail.jpg',
+        'https://media.karousell.com/media/photos/products/2022/10/17/kids_bicycle_for_boys_1665998922_78618f65_progressive_thumbnail.jpg',
+        'https://media.karousell.com/media/photos/products/2022/10/19/bicycle_for_kids_1666145641_71363a38_progressive_thumbnail.jpg',
+        'https://media.karousell.com/media/photos/products/2022/10/6/kids_bicycle_1665050770_49ae0cb1_progressive_thumbnail.jpg',
+        'https://media.karousell.com/media/photos/products/2022/10/10/giant_12inch_kids_bicycle_1665377228_b952ccee_progressive_thumbnail.jpg',
+        'https://media.karousell.com/media/photos/products/2022/10/19/kids_bicycle_1666162726_ae120d8d_progressive_thumbnail.jpg',
+        'https://media.karousell.com/media/photos/products/2022/10/23/kids_16_inch_bicycle_suitable__1666514586_128a4b24_progressive_thumbnail.jpg',
+    ],
+
+    'item-search-for' => [
+        'SMS',
+        'foldable mountain bike 24"',
+        'crolan 24"',
+        'foldable mountain bike 24"',
+        'japan foldable bike',
+        'treknogy',
+        'japan foldable bike',
+        'Hellu kkkk',
     ]
 ];
