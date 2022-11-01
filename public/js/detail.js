@@ -101,3 +101,12 @@ e.preventDefault();
 var slideno = $(this).data('slide');
 $('.slider-nav').slick('slickGoTo', slideno - 1);
 });
+
+
+document.getElementById('login-face').addEventListener('click',
+function(){
+    document.querySelector('.modal-login').style.display = 'inline';
+});
+
+
+

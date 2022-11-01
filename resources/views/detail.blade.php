@@ -6,7 +6,7 @@
         $showSimilarProduct = Config::get('products.similar-product');
         $showItemSearchFor = Config::get('products.item-search-for');
     @endphp
-    <section class="mt-10">
+    <section class="mt-10 m-auto">
         <div class="content w-full lg:w-10/12 m-auto">
             <!-- start breadcrumb -->
             <ul class="breadcrumb-detail pt-4 hidden lg:flex">
@@ -19,12 +19,12 @@
             <!-- end breadcrumb -->
 
             <!-- slide-image start -->
-            <div class="flex p-0 items-center justify-center w-full h-full m-auto">
+            <div class="flex items-center justify-center w-full m-auto">
                 <div class="w-full relative flex items-center justify-center">
                     <div class="w-full h-full mx-auto">
                         <div class="slider-img block m-auto">
                             @foreach($showSlideProduct as $slidePro)
-                            <div class="mr-1">
+                            <div class="sm:mr-1">
                                 <img src="{{$slidePro}}" alt="black chair and white table" class="w-full" />
                             </div>
                             @endforeach
