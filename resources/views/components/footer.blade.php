@@ -1,8 +1,9 @@
 @php
     $links = Config::get('products.footerLinks');
     $flags = Config::get('products.footerFlags');
+    $topicSearch = Config::get('used-cars.topicSearch');
 @endphp
-<div class="footer mobile:w-[98%] mx-auto">
+<div class="footer mobile:w-[98%] mx-auto mobile:mt-[20px]">
     <div class="footer__banner mobile:hidden">
         <div class="banner__items flex justify-center items-center mb-[100px]">
             <img src="https://storage.googleapis.com/carousell-sl/homescreens/main/carousell_qrcode_cats.png"
@@ -31,108 +32,42 @@
             </div>
         </div>
     </div>
-    <div class="footer__links mb-[30px] mx-auto
-        xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full
-        xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:mx-0">
-        <p class="text-[12px] leading-[20px] font-bold mb-[20px]">
-            Top searches
-        </p>
-       <div class="mb-[20px]">
-           @foreach($links as $link)
-               <a href="http://carousell.sg" class="text-[12px] leading-[20px] text-[#00bfa2]">
-                   {{$link}}
-               </a>
-               <span>|</span>
-           @endforeach
-       </div>
 
-        <hr>
-    </div>
 
-    <div class="footer__links mb-[30px]
-        xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full
-        xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:ml-0">
-        <label class="mobile:flex mobile:justify-between">
-            <p class="text-[12px] leading-[20px] font-bold mb-[10px]">
-                Popular Used Car By Brand
-            </p>
-            <i class="fa fa-chevron-down
-            xl:hidden lg:hidden md:hidden sm:hidden
-            mobile:block"></i>
-        </label>
+    <div class="flex flex-col">
+        @foreach($topicSearch as $topic)
+            <div class="footer__links mb-[30px] mx-auto mobile:pt-[10px]
+            xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full
+            xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:mx-0">
 
-        <div>
-            @foreach($links as $link)
-                <a href="http://carousell.sg" class="text-[12px] leading-[20px] text-[#57585a] hover:text-[#00bfa2] hover:underline">
-                    {{$link}}
-                </a>
-                <i class="fa fa-circle scale-[0.4]"></i>
-            @endforeach
-        </div>
-    </div>
-    <div class="footer__links mb-[30px]
-        xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full
-        xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:ml-0">
-        <p class="text-[12px] leading-[20px] font-bold mb-[10px]">
-            Popular Used Car By Brand
-        </p>
-        @foreach($links as $link)
-            <a href="http://carousell.sg" class="text-[12px] leading-[20px] text-[#57585a] hover:text-[#00bfa2] hover:underline">
-                {{$link}}
-            </a>
-            <i class="fa fa-circle scale-[0.4]"></i>
-        @endforeach
-    </div>
-    <div class="footer__links mb-[30px]
-        xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full
-        xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:ml-0">
-        <p class="text-[12px] leading-[20px] font-bold mb-[10px]">
-            Popular Used Car By Brand
-        </p>
-        @foreach($links as $link)
-            <a href="http://carousell.sg" class="text-[12px] leading-[20px] text-[#57585a] hover:text-[#00bfa2] hover:underline">
-                {{$link}}
-            </a>
-            <i class="fa fa-circle scale-[0.4]"></i>
-        @endforeach
-    </div>
-    <div class="footer__links mb-[30px]
-        xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full
-        xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:ml-0">
-        <p class="text-[12px] leading-[20px] font-bold mb-[10px]">
-            Popular Used Car By Brand
-        </p>
-        @foreach($links as $link)
-            <a href="http://carousell.sg" class="text-[12px] leading-[20px] text-[#57585a] hover:text-[#00bfa2] hover:underline">
-                {{$link}}
-            </a>
-            <i class="fa fa-circle scale-[0.4]"></i>
-        @endforeach
-    </div>
-    <div class="footer__links mb-[30px]
-        xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full
-        xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:ml-0">
-        <p class="text-[12px] leading-[20px] font-bold mb-[10px]">
-            Popular Used Car By Brand
-        </p>
-        @foreach($links as $link)
-            <a href="http://carousell.sg" class="text-[12px] leading-[20px] text-[#57585a] hover:text-[#00bfa2] hover:underline">
-                {{$link}}
-            </a>
-            <i class="fa fa-circle scale-[0.4]"></i>
-        @endforeach
-    </div>
-    <div class="footer__links mb-[30px]
-        xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full
-        xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:ml-0">
-        <p class="text-[12px] leading-[20px] font-bold mb-[10px]">
-            Popular Used Car By Brand
-        </p>
-        @foreach($links as $link)
-            <a href="http://carousell.sg" class="text-[12px] leading-[20px] text-[#57585a] hover:text-[#00bfa2] hover:underline">
-                {{$link}}
-            </a>
-            <i class="fa fa-circle scale-[0.4]"></i>
+                <div class="mobile:flex mobile:justify-between mobile:px-[10px]"
+                     onclick="clickToggle('{{$topic}}')">
+                    <p class="text-[12px] leading-[20px] font-bold mb-[20px]">
+                        {{$topic}}
+                    </p>
+                    <div class="hidden mobile:block">
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="mb-[20px] flex
+                flex-wrap
+                mobile:hidden mobile:flex
+                 mobile:flex-col gap-[5px]"
+                     id="{{$topic}}">
+                    @foreach($links as $link)
+                        <div class="mobile:px-[10px]  break-normal">
+                            <a href="http://carousell.sg"
+                               class="text-[12px] leading-[20px]
+                            hover:underline hover:text-[#008f79]">
+                                {{$link}}
+                            </a>
+                            <span class="mobile:hidden">|</span>
+                        </div>
+                    @endforeach
+                </div>
+
+                <hr>
+            </div>
         @endforeach
     </div>
     <hr>
@@ -191,3 +126,5 @@
         width: calc(100vw - 15px);
     }
 </style>
+
+<script src="./js/footer.js"></script>

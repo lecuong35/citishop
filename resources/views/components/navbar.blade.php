@@ -5,7 +5,7 @@
     $cateIndex = 14;
     $cateId = 1;
 @endphp
-<div class="wrapper font-roboto w-full
+<div class="wrapper font-roboto w-full top-0
         fixed bg-white z-10 mobile:z-[5]">
 
   <div class="xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:ml-0
@@ -122,12 +122,24 @@
                   <div class="electronic__nav py-[5px] w-[200px] rounded-sm
             shadow-sm shadow-gray-300 absolute top-[50px] left-[0px] z-[1]
             bg-white hidden">
-                      <p class="w-full px-[10px] py-[10px] hover:bg-[#f0f0f1]">Used Car</p>
-                      <p class="w-full px-[10px] py-[10px] hover:bg-[#f0f0f1]">Car Rental</p>
-                      <p class="w-full px-[10px] py-[10px] hover:bg-[#f0f0f1]">Parallel Import</p>
-                      <p class="w-full px-[10px] py-[10px] hover:bg-[#f0f0f1]">Commercial Vehicles</p>
-                      <p class="w-full px-[10px] py-[10px] hover:bg-[#f0f0f1]">Car Accessories</p>
-                      <p class="w-full px-[10px] py-[10px] hover:bg-[#f0f0f1]">Motorcycles</p>
+                     <div class="w-full px-[10px] py-[10px] hover:bg-[#f0f0f1]">
+                         <a href="/used-car">Used Car</a>
+                     </div>
+                      <div class="w-full px-[10px] py-[10px] hover:bg-[#f0f0f1]">
+                          <a href="/rental-car">Car Rental</a>
+                      </div>
+                      <div class="w-full px-[10px] py-[10px] hover:bg-[#f0f0f1]">
+                          <a href="/parallel">Parallel Import</a>
+                      </div>
+                      <div class="w-full px-[10px] py-[10px] hover:bg-[#f0f0f1]">
+                          <a href="/commercial-vehicle">Commercial Vehicles</a>
+                      </div>
+                      <div class="w-full px-[10px] py-[10px] hover:bg-[#f0f0f1]">
+                          <a href="/accessories-car">Car Accessories</a>
+                      </div>
+                      <div class="w-full px-[10px] py-[10px] hover:bg-[#f0f0f1]">
+                          <a href="/motorcycles">Motorcycles</a>
+                      </div>
                   </div>
               </div>
 
