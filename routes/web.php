@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Route::get('/search', function () {
     return view('searchPage');
+});
 
 Route::get('/detail', function () {
     return view('detail');
@@ -33,3 +34,27 @@ Route::get('/register', function () {
     return view('/auth/register');
 
 });
+Route::get('/used-car', function () {
+    return view('used-car');
+});
+
+Route::get('/rental-car', function () {
+    return view('rental-car');
+});
+
+Route::get('/parallel', function () {
+    return view('parallel');
+});
+
+Route::get('/commercial-vehicle', function () {
+    return view('commercial-vehicle');
+});
+
+Route::get('/accessories-car', function () {
+    return view('accessories-car');
+});
+
+Route::get('/motorcycles', function () {
+    return view('motorcycles');
+});
+

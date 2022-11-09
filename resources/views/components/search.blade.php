@@ -39,7 +39,9 @@
             <button class="bg-[#026958] rounded-lg px-[15px] py-[5px]
             h-[38px] absolute top-[-10px] ml-[-80px]
             text-[14px] leading-[22px] text-white font-bold">
-                Search
+                <a href="/search">
+                    Search
+                </a>
             </button>
         </label>
 
