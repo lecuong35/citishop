@@ -47,7 +47,7 @@ $(".listed__price").on('init reInit afterChange', function(event, slick, current
 });
 
 $(".listed__price").slick({
-    infinite: true,
+    infinite: false,
     slidesToShow: 4,
     slidesToScroll: 1,
     nextArrow: '.listed__next',
@@ -64,22 +64,26 @@ $(".listed__price").slick({
     ]
 });
 
-$(".caItems").slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow: '.item__next',
-    prevArrow: '.item__prev',
-});
+id = ['car1', 'car2', 'car3', 'car4', 'car5'];
 
-$('.caItems').on('touchstart touchmove mousemove mouseenter', function(e) {
+
+id.forEach((slickId) => {
+    $("#caItems" + slickId).slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow: '#item__next' + slickId,
+        prevArrow: '#item__prev' + slickId,
+    });
+})
+
+
+$('.imgBox1').on('touchstart touchmove mousemove mouseenter', function(e) {
     $('.listed__price').slick('slickSetOption', 'swipe', false, false);
-    $('.caItems').slick('slickSetOption', 'accessibility', true, false);
 });
 
-$('.caItems').on('touchend mouseover mouseout', function(e) {
+$('.imgBox1').on('touchend mouseover mouseout', function(e) {
     $('.listed__price').slick('slickSetOption', 'swipe', true, false);
-    $('.caItems').slick('slickSetOption', 'accessibility', false, false);
 });
 
 $(".listed__price3").on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
@@ -93,8 +97,10 @@ $(".listed__price3").on('init reInit afterChange', function(event, slick, curren
     }
 });
 
+
+
 $(".listed__price3").slick({
-    infinite: true,
+    infinite: false,
     slidesToShow: 4,
     slidesToScroll: 1,
     nextArrow: '.listed__next3',
@@ -111,20 +117,22 @@ $(".listed__price3").slick({
     ]
 });
 
-$(".caItems3").slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow: '.item__next3',
-    prevArrow: '.item__prev3',
-});
+id2 = ['car1', 'car2', 'car3', 'car4', 'car5'];
+id2.forEach((slickId) => {
+    $("#caItems3" + slickId).slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow: '#item__next3' + slickId,
+        prevArrow: '#item__prev3' + slickId,
+    });
+})
 
-$('.caItems3').on('touchstart touchmove mousemove mouseenter', function(e) {
+
+$('.imgBox').on('touchstart touchmove mousemove mouseenter', function(e) {
     $('.listed__price3').slick('slickSetOption', 'swipe', false, false);
-    $('.caItems3').slick('slickSetOption', 'accessibility', true, false);
 });
 
-$('.caItems3').on('touchend mouseover mouseout', function(e) {
+$('.imgBox').on('touchend mouseover mouseout', function(e) {
     $('.listed__price3').slick('slickSetOption', 'swipe', true, false);
-    $('.caItems3').slick('slickSetOption', 'accessibility', false, false);
 });
