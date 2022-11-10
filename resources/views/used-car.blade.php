@@ -17,23 +17,23 @@
 @endphp
 
 @section('content')
-{{-- header search --}}
-<div class=" hidden flex overflow-x-auto
+    {{-- header search --}}
+    <div class=" hidden flex overflow-x-auto
 mobile:mt-[25px] fixed z-[9]
  mobile:flex bg-white w-full">
- @foreach($headerSearch as $he)
-    <div class="px-[20px] py-[10px]">
-        <a href="https://www.carousell.sg">
-            <p class="text-[16px] leading-[24px]
+        @foreach($headerSearch as $he)
+            <div class="px-[20px] py-[10px]">
+                <a href="https://www.carousell.sg">
+                    <p class="text-[16px] leading-[24px]
             hover:text-[#008f79] hover:underline inline-block overflow-x-hidden whitespace-nowrap">
-                {{$he}}
-            </p>
-        </a>
+                        {{$he}}
+                    </p>
+                </a>
+            </div>
+        @endforeach
     </div>
-    @endforeach
-</div>
 
-{{--    searchs   --}}
+    {{--    searchs   --}}
     <div class="mt-[150px] xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full
         mobile:ml-0 mobile:mt-[100px]
         rounded-xl mobile:rounded-none
@@ -62,19 +62,19 @@ mobile:mt-[25px] fixed z-[9]
                 rounded-lg h-[44px] items-center px-[10px]
                 mobile:h-fit
                 mobile:flex mobile:flex-col mobile:py-[20px]">
-{{-- for search 1 --}}
+                    {{-- for search 1 --}}
                     <div class="bodySearch relative mobile:w-full">
                         <div class=" pr-[80px] mobile:pr-0 mobile:mb-[20px]" onclick="clickToggle('bodyToggle')">
                             <div class="flex items-center gap-[5px]
                             mobile:flex mobile:justify-between">
-                                    <p class="text-[16px] leading-[24px] w-[70px]" style="display: block"
-                                       id="bodyToggleText">
-                                        Body
-                                    </p>
+                                <p class="text-[16px] leading-[24px] w-[70px]" style="display: block"
+                                   id="bodyToggleText">
+                                    Body
+                                </p>
 
-                                    <div class="mobile:hidden">
-                                        <i class="fa fa-chevron-down"></i>
-                                    </div>
+                                <div class="mobile:hidden">
+                                    <i class="fa fa-chevron-down"></i>
+                                </div>
                             </div>
                             <div class="px-[10px] py-[10px] border-b-[1px]
                             border-solid border-[#c5c5c6] flex justify-between
@@ -85,7 +85,7 @@ mobile:mt-[25px] fixed z-[9]
                             </div>
                         </div>
                         <div style="display: none;" id="bodyToggle"
-                        class="absolute top-[50px] left-0 w-[300px] h-[250px] overflow-y-auto
+                             class="absolute top-[50px] left-0 w-[300px] h-[250px] overflow-y-auto
                         bg-white shadow-xl rounded-lg
                         mobile:fixed mobile:w-full mobile:h-full
                         mobile:top-0 mobile:rounded-none mobile:z-[9]
@@ -110,7 +110,7 @@ mobile:mt-[25px] fixed z-[9]
                             </div>
                         </div>
                     </div>
-{{-- for search 2 --}}
+                    {{-- for search 2 --}}
                     <div class="depreciationSearch relative mobile:w-full">
                         <div class=" pr-[80px] mobile:pr-0 mobile:mb-[20px]" onclick="clickToggle('deToggle')">
                             <div class="flex items-center gap-[5px]
@@ -248,399 +248,415 @@ mobile:mt-[25px] fixed z-[9]
                 <div class="text-[16px] leading-[24px] text-white flex
                 mobile:overflow-x-auto mobile:flex">
                     @foreach($trending as $tre)
-                            <div class="mobile:px-[10px] mobile:py-[5px] mobile:rounded-full
+                        <div class="mobile:px-[10px] mobile:py-[5px] mobile:rounded-full
                             mobile:bg-[#f0f0f1] mobile:gap-[10px]">
-                                <a href="https://www.carousell.sg"
-                                   class="hover:underline text-[#fff] mobile:text-[#000]
+                            <a href="https://www.carousell.sg"
+                               class="hover:underline text-[#fff] mobile:text-[#000]
                                    mobile:whitespace-nowrap mobile:inline-block">
-                                    {{ $tre }},
-                                </a>
-                            </div>
+                                {{ $tre }},
+                            </a>
+                        </div>
                     @endforeach
                 </div>
             </div>
         </div>
     </div>
 
-{{--topics--}}
-<div class="menu xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%]
+    {{--topics--}}
+    <div class="menu xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%]
     mx-auto py-[20px] mt-[20px] mobile:mt-[50px]">
-    <div class="menu__title flex flex-row justify-between mb-[20px]">
-        <p class="text-[24px] leading-[32px] font-bold
+        <div class="menu__title flex flex-row justify-between mb-[20px]">
+            <p class="text-[24px] leading-[32px] font-bold
             mobile:text-[18px] mobile:leading-[26px] mobile:text-[#2c2c2d]">
-            What would you like to find?
-        </p>
-    </div>
+                What would you like to find?
+            </p>
+        </div>
 
-    <div class="menu__items overflow-y-hidden">
-        <div class="flex flex-row overflow-y-auto justify-start gap-[20px]">
-           @foreach($topic as $key=>$to)
-                <div class=" bg-[#f0f1f1] px-[15px] pt-[15px] pb-[25px]
+        <div class="menu__items overflow-y-hidden">
+            <div class="flex flex-row overflow-y-auto justify-start gap-[20px]">
+                @foreach($topic as $key=>$to)
+                    <div class=" bg-[#f0f1f1] px-[15px] pt-[15px] pb-[25px]
                     rounded-lg
                     xl:w-[15%] lg:w-[15%] md:w-[15%] sm:w-[15%]
                     hover:translate-y-[-7px] transition-transform">
-                    <a href="http://www.carousell.sg"
-                       class="property flex flex-col justify-center items-center text-center">
-                        <img src="{{$to}}"
-                             alt="property"
-                             class="w-[72px] mb-[10px]">
-                        <p class="text-img">{{$topicNames[$key]}}</p>
-                    </a>
-                </div>
-            @endforeach
+                        <a href="http://www.carousell.sg"
+                           class="property flex flex-col justify-center items-center text-center">
+                            <img src="{{$to}}"
+                                 alt="property"
+                                 class="w-[72px] mb-[10px]">
+                            <p class="text-img">{{$topicNames[$key]}}</p>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+
         </div>
 
     </div>
 
-</div>
-
-{{-- brands --}}
-<div class="menu xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%] mx-auto py-[30px]">
-    <div class="menu__title flex flex-row justify-between mb-[20px]">
-        <p class="text-[24px] leading-[32px] font-bold
+    {{-- brands --}}
+    <div class="menu xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%] mx-auto py-[30px]">
+        <div class="menu__title flex flex-row justify-between mb-[20px]">
+            <p class="text-[24px] leading-[32px] font-bold
             mobile:text-[18px] mobile:leading-[26px] mobile:text-[#2c2c2d]">
-           Popular Brands
-        </p>
-    </div>
+                Popular Brands
+            </p>
+        </div>
 
-    <div class="menu__items relative">
-        <div class="brandNames flex flex-row justify-start gap-[8px]">
-            @foreach($popularBrands as $keyBrand=>$brand)
-                <div class="px-[15px] pt-[15px]
+        <div class="menu__items relative">
+            <div class="brandNames flex flex-row justify-start gap-[8px]">
+                @foreach($popularBrands as $keyBrand=>$brand)
+                    <div class="px-[15px] pt-[15px]
                     xl:w-[15%] lg:w-[15%] md:w-[15%] sm:w-[15%]
                     hover:translate-y-[-7px] transition-transform">
-                    <a href="http://www.carousell.sg"
-                       class="property flex flex-col justify-center items-center text-center">
-                       <div class="shadow-xl p-[5px] w-[80px] h-[80px]
+                        <a href="http://www.carousell.sg"
+                           class="property flex flex-col justify-center items-center text-center">
+                            <div class="shadow-xl p-[5px] w-[80px] h-[80px]
                        flex items-center justify-center"
-                            style="border-radius: 50%">
-                           <img src="{{$brand}}"
-                                alt="property">
-                       </div>
-                        <p class="text-img">{{$popularBrandNames[$keyBrand]}}</p>
-                    </a>
-                </div>
-            @endforeach
-        </div>
-        {{-- button prev--}}
-        <div class="brands__prev mobile:hidden">
-            <i class="fas fa-chevron-left z-[9]
+                                 style="border-radius: 50%">
+                                <img src="{{$brand}}"
+                                     alt="property">
+                            </div>
+                            <p class="text-img">{{$popularBrandNames[$keyBrand]}}</p>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+            {{-- button prev--}}
+            <div class="brands__prev mobile:hidden">
+                <i class="fas fa-chevron-left z-[9]
                    flex items-center justify-center
                    w-[36px] h-[36px]
                    absolute left-[-15px] top-[40%]
                    bg-white rounded-full hover:shadow-xl" style="display: flex;"></i>
-        </div>
+            </div>
 
-        {{-- button next--}}
-        <div class="brands__next mobile:hidden">
-            <i class="fas fa-chevron-right z-[9]
+            {{-- button next--}}
+            <div class="brands__next mobile:hidden">
+                <i class="fas fa-chevron-right z-[9]
                    flex items-center justify-center
                    w-[36px] h-[36px] right-[-15px]
                    absolute top-[40%]
                    bg-white rounded-full hover:shadow-xl" style="display: flex"></i>
+            </div>
+
         </div>
 
     </div>
 
-</div>
-
-{{-- slides --}}
-<div class="slides relative mx-auto pt-[20px] mb-[50px]
+    {{-- slides --}}
+    <div class="slides relative mx-auto pt-[20px] mb-[50px]
    mt-[30px] mobile:mt-[50px]
     xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%]
     xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:mx-auto">
-    {{--         button prev--}}
-    <div class="slides__prev mobile:hidden">
-        <i class="fas fa-chevron-left z-[9]
+        {{--         button prev--}}
+        <div class="slides__prev mobile:hidden">
+            <i class="fas fa-chevron-left z-[9]
            flex items-center justify-center
            w-[36px] h-[36px]
            absolute left-[-15px] top-[50%]
            bg-white rounded-full hover:shadow-xl" style="display: flex;"></i>
-    </div>
+        </div>
 
-    {{--         button next--}}
-    <div class="slides__next mobile:hidden">
-        <i class="fas fa-chevron-right z-[9]
+        {{--         button next--}}
+        <div class="slides__next mobile:hidden">
+            <i class="fas fa-chevron-right z-[9]
            flex items-center justify-center
            w-[36px] h-[36px]
            absolute right-[-15px] top-[50%]
            bg-white rounded-full hover:shadow-xl" style="display: flex"></i>
+        </div>
+
+        {{--         slides show--}}
+        <div class="slides__show flex flex-row nowrap w-full">
+            @foreach($showSlide as $slide)
+                <a href="http://www.carousell.sg" class="w-[50%] h-auto rounded-lg mx-[5px]">
+                    <img src="{{$slide}}"
+                         alt="img"
+                         class="rounded-lg"
+                    >
+                </a>
+            @endforeach
+        </div>
     </div>
 
-    {{--         slides show--}}
-    <div class="slides__show flex flex-row nowrap w-full">
-        @foreach($showSlide as $slide)
-            <a href="http://www.carousell.sg" class="w-[50%] h-auto rounded-lg mx-[5px]">
-                <img src="{{$slide}}"
-                     alt="img"
-                     class="rounded-lg"
-                >
-            </a>
-        @endforeach
-    </div>
-</div>
+    {{-- listed car --}}
+    <div class="listedCars xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%] mx-auto py-[20px] relative">
+        <div class="listed__title flex justify-between items-center mb-[30px]">
+            <p class="text-[24px] leading-[32px] font-bold">
+                Recently Listed Cars
+            </p>
+        </div>
 
-{{-- listed car --}}
-<div class="listedCars xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%] mx-auto py-[20px] relative">
-    <div class="listed__title flex justify-between items-center mb-[30px]">
-        <p class="text-[24px] leading-[32px] font-bold">
-            Recently Listed Cars
-        </p>
-    </div>
-
-    {{-- topic items--}}
-    <div class="listed__price overflow-hidden flex flex-row nowrap relative
+        {{-- topic items--}}
+        <div class="listed__price overflow-hidden flex flex-row nowrap relative
         mobile:overflow-y-auto" >
-           @foreach($cars as $key => $ca)
-               <div class="bi p-[5px] w-[25%] hover:shadow-2xl flex flex-col justify-between h-[450px]">
-                   <div>
-                       <div class="listed__body px-[5px] flex flex-col">
-                           <div class="relative imgBox">
-                               <div class="caItems w-[100%] h-[240px] relative">
-                                   @foreach($ca as $caItem)
-                                           <a href="https://www.carousell.sg">
-                                               <img src="{{$caItem}}" alt=""
-                                                    class="rounded-md my-[10px] w-[100%] h-[240px]">
-                                           </a>
-                                   @endforeach
-                               </div>
-                               {{--button prev--}}
-                               <div class="item__prev z-[12] absolute top-[50%] left-0 mobile:hidden">
-                                   <i class="fas fa-chevron-left z-[9]
+            @foreach($cars as $key => $ca)
+                <div class="bi p-[5px] w-[25%] hover:shadow-2xl flex flex-col justify-between h-[450px]">
+                    <div>
+                        <div class="listed__body px-[5px] flex flex-col">
+                            <div class="relative imgBox1">
+                                <div class="caItems w-[100%] h-[240px] relative"
+                                     id="caItems{{$key}}">
+                                    @foreach($ca as $caItem)
+                                        <a href="https://www.carousell.sg">
+                                            <img src="{{$caItem}}" alt=""
+                                                 class="rounded-md my-[10px] w-[100%] h-[240px]">
+                                        </a>
+                                    @endforeach
+                                </div>
+                                {{--button prev--}}
+                                <div class="item__prev z-[12]
+                               absolute top-[50%] left-0
+                               mobile:hidden"
+                                     id="item__prev{{$key}}">
+                                    <i class="fas fa-chevron-left z-[9]
                                    flex items-center justify-center
-                                   w-[36px] h-[36px]
-                                   bg-white rounded-full hover:shadow-xl" style="display: flex;"></i>
-                               </div>
-                               {{--button next--}}
-                               <div class="item__next z-[12] absolute top-[50%] right-0 mobile:hidden">
-                                   <i class="fas fa-chevron-right z-[9]
+                                   w-[36px] h-[36px] opacity-30
+                                   hover:opacity-75
+                                   bg-white rounded-full hover:shadow-xl"
+                                       style="display: flex;"></i>
+                                </div>
+                                {{--button next--}}
+                                <div class="item__next z-[12] absolute top-[50%] right-0 mobile:hidden"
+                                     id="item__next{{$key}}">
+                                    <i class="fas fa-chevron-right z-[9]
                                    flex items-center justify-center
-                                   w-[36px] h-[36px]
+                                   w-[36px] h-[36px] opacity-30
+                                   hover:opacity-75
                                    bg-white rounded-full hover:shadow-xl" style="display: flex"></i>
-                               </div>
-                           </div>
-                           <div class="body__describe mt-[20px]">
-                               <p class="text-[14px] leading-[22px] text-[#57585a]">
-                                   Kids balance bicycle
-                               </p>
-                               <p class="text-[16px] leading-[24px] text-[#57585a] font-bold">
-                                   S$ 70
-                               </p>
-                               <p class="text-[14px] leading-[22px] text-[#57585a]">
-                                   Lightly used
-                               </p>
-                           </div>
-                       </div>
-                       <a class="bi__footer flex items-center"
-                          href="http://www.carousell.sg">
-                           <i class="far fa-heart" style="color: #57585a"></i>
-                           <p class="text-[12px] text-[#57585a] leading-[20px]">
-                               12
-                           </p>
-                       </a>
-                       <a href="http://www.carousell.sg"
-                          class="listed__header flex flex-row gap-[5px]
+                                </div>
+                            </div>
+                            <div class="body__describe mt-[20px]">
+                                <p class="text-[14px] leading-[22px] text-[#57585a]">
+                                    Kids balance bicycle
+                                </p>
+                                <p class="text-[16px] leading-[24px] text-[#57585a] font-bold">
+                                    S$ 70
+                                </p>
+                                <p class="text-[14px] leading-[22px] text-[#57585a]">
+                                    Lightly used
+                                </p>
+                            </div>
+                        </div>
+                        <a class="bi__footer flex items-center gap-[5px] my-[5px]"
+                           href="http://www.carousell.sg">
+                            <i class="far fa-heart" style="color: #57585a"></i>
+                            <p class="text-[12px] text-[#57585a] leading-[20px]">
+                                12
+                            </p>
+                        </a>
+                        <a href="http://www.carousell.sg"
+                           class="listed__header flex flex-row gap-[5px]
                                 items-center mt-[10px]">
-                               <img src="https://media.karousell.com/media/photos/profiles/2021/04/18/tonytoh8888_1618750501.jpg" alt=""
-                                    class="w-[32px] h-[32px] rounded-full">
-                               <div class="header__name flex flex-col justify-center">
-                                   <p class="text-[14px] leading-[22px] font-bold text-[#2c2c2d]">
-                                       planet888
-                                   </p>
-                                   <p class="text-[12px] leading-[20px] text-[#57585a]">
-                                       26 minutes ago
-                                   </p>
-                               </div>
-                       </a>
-                   </div>
-               </div>
-           @endforeach
-    </div>
+                            <img src="https://media.karousell.com/media/photos/profiles/2021/04/18/tonytoh8888_1618750501.jpg" alt=""
+                                 class="w-[32px] h-[32px] rounded-full">
+                            <div class="header__name flex flex-col justify-center">
+                                <p class="text-[14px] leading-[22px] font-bold text-[#2c2c2d]">
+                                    planet888
+                                </p>
+                                <p class="text-[12px] leading-[20px] text-[#57585a]">
+                                    26 minutes ago
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
 
-    {{-- button prev--}}
-    <div class="listed__prev mobile:hidden">
-        <i class="fas fa-chevron-left z-[9]
+        {{-- button prev--}}
+        <div class="listed__prev mobile:hidden">
+            <i class="fas fa-chevron-left z-[9]
            flex items-center justify-center
            w-[36px] h-[36px]
            absolute left-[-15px] top-[50%]
            bg-white rounded-full hover:shadow-xl" style="display: flex;"></i>
-    </div>
+        </div>
 
-    {{-- button next--}}
-    <div class="listed__next mobile:hidden">
-        <i class="fas fa-chevron-right z-[9]
+        {{-- button next--}}
+        <div class="listed__next mobile:hidden">
+            <i class="fas fa-chevron-right z-[9]
            flex items-center justify-center
            w-[36px] h-[36px] right-[-15px]
            absolute top-[50%]
            bg-white rounded-full hover:shadow-xl" style="display: flex" ></i>
+        </div>
+
     </div>
 
-</div>
-
-{{-- popular car --}}
-<div class="listedCars xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%] mx-auto py-[20px] relative">
-    <div class="listed__title flex justify-between items-center mb-[30px]">
-        <p class="text-[24px] leading-[32px] font-bold">
-            Popular Cars
-        </p>
-        <a href="https://www.carousell.sg"
-            class="text-[16px] leading-[24px] text-[#008f79]
+    {{-- popular car --}}
+    <div class="listedCars xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%] mx-auto py-[20px] relative">
+        <div class="listed__title flex justify-between items-center mb-[30px]">
+            <p class="text-[24px] leading-[32px] font-bold">
+                Popular Cars
+            </p>
+            <a href="https://www.carousell.sg"
+               class="text-[16px] leading-[24px] text-[#008f79]
             hover:underline">
-            See all
-            <span>
+                See all
+                <span>
                 <i class="fa fa-chevron-right"></i>
             </span>
-        </a>
-    </div>
+            </a>
+        </div>
 
-    {{-- topic items--}}
-    <div class="listed__price3 overflow-x-hidden flex flex-row nowrap relative
+        {{-- topic items--}}
+        <div class="listed__price3 overflow-x-hidden flex flex-row nowrap relative
         mobile:overflow-x-auto" >
-        @foreach($cars as $key => $ca)
-            <div class="bi p-[5px] w-[25%] hover:shadow-2xl flex flex-col justify-between h-[450px]">
-                <div>
-                    <div class="listed__body px-[5px] flex flex-col">
-                        <div class="relative imgBox">
-                            <div class="caItems3 w-[100%] h-[240px] relative">
-                                @foreach($ca as $caItem)
-                                    <a href="https://www.carousell.sg">
-                                        <img src="{{$caItem}}" alt=""
-                                             class="rounded-md my-[10px] w-[100%] h-[240px]">
-                                    </a>
-                                @endforeach
-                            </div>
-                            {{--button prev--}}
-                            <div class="item__prev3 z-[12] absolute top-[50%] left-0 mobile:hidden">
-                                <i class="fas fa-chevron-left z-[9]
+            @foreach($cars as $key => $ca)
+                <div class="bi p-[5px] w-[25%] hover:shadow-2xl flex flex-col justify-between h-[450px]">
+                    <div>
+                        <div class="listed__body px-[5px] flex flex-col">
+                            <div class="relative imgBox">
+                                <div class="caItems3 w-[100%] h-[240px] relative"
+                                     id="caItems3{{$key}}">
+                                    @foreach($ca as $caItem)
+                                        <a href="https://www.carousell.sg">
+                                            <img src="{{$caItem}}" alt=""
+                                                 class="rounded-md my-[10px] w-[100%] h-[240px]">
+                                        </a>
+                                    @endforeach
+                                </div>
+                                {{--button prev--}}
+                                <div class="item__prev3 z-[12]
+                               absolute top-[50%] left-0
+                               mobile:hidden"
+                                     id="item__prev3{{$key}}">
+                                    <i class="fas fa-chevron-left z-[9]
                                    flex items-center justify-center
-                                   w-[36px] h-[36px]
-                                   bg-white rounded-full hover:shadow-xl" style="display: flex;"></i>
-                            </div>
-                            {{--button next--}}
-                            <div class="item__next3 z-[12] absolute top-[50%] right-0 mobile:hidden">
-                                <i class="fas fa-chevron-right z-[9]
+                                   w-[36px] h-[36px] opacity-30
+                                   hover:opacity-75
+                                   bg-white rounded-full hover:shadow-xl"
+                                       style="display: flex;"></i>
+                                </div>
+                                {{--button next--}}
+                                <div class="item__next3 z-[12] absolute top-[50%] right-0 mobile:hidden"
+                                     id="item__next3{{$key}}">
+                                    <i class="fas fa-chevron-right z-[9]
                                    flex items-center justify-center
-                                   w-[36px] h-[36px]
+                                   w-[36px] h-[36px] opacity-30
+                                   hover:opacity-75
                                    bg-white rounded-full hover:shadow-xl" style="display: flex"></i>
+                                </div>
+                            </div>
+                            <div class="body__describe mt-[20px]">
+                                <p class="text-[14px] leading-[22px] text-[#57585a]">
+                                    Kids balance bicycle
+                                </p>
+                                <p class="text-[16px] leading-[24px] text-[#57585a] font-bold">
+                                    S$ 70
+                                </p>
+                                <p class="text-[14px] leading-[22px] text-[#57585a]">
+                                    Lightly used
+                                </p>
                             </div>
                         </div>
-                        <div class="body__describe mt-[20px]">
-                            <p class="text-[14px] leading-[22px] text-[#57585a]">
-                                Kids balance bicycle
+                        <a class="bi__footer flex items-center"
+                           href="http://www.carousell.sg">
+                            <i class="far fa-heart" style="color: #57585a"></i>
+                            <p class="text-[12px] text-[#57585a] leading-[20px]">
+                                12
                             </p>
-                            <p class="text-[16px] leading-[24px] text-[#57585a] font-bold">
-                                S$ 70
-                            </p>
-                            <p class="text-[14px] leading-[22px] text-[#57585a]">
-                                Lightly used
-                            </p>
-                        </div>
-                    </div>
-                    <a class="bi__footer flex items-center"
-                       href="http://www.carousell.sg">
-                        <i class="far fa-heart" style="color: #57585a"></i>
-                        <p class="text-[12px] text-[#57585a] leading-[20px]">
-                            12
-                        </p>
-                    </a>
-                    <a href="http://www.carousell.sg"
-                       class="listed__header flex flex-row gap-[5px]
+                        </a>
+                        <a href="http://www.carousell.sg"
+                           class="listed__header flex flex-row gap-[5px]
                                 items-center mt-[10px]">
-                        <img src="https://media.karousell.com/media/photos/profiles/2021/04/18/tonytoh8888_1618750501.jpg" alt=""
-                             class="w-[32px] h-[32px] rounded-full">
-                        <div class="header__name flex flex-col justify-center">
-                            <p class="text-[14px] leading-[22px] font-bold text-[#2c2c2d]">
-                                planet888
-                            </p>
-                            <p class="text-[12px] leading-[20px] text-[#57585a]">
-                                26 minutes ago
-                            </p>
-                        </div>
-                    </a>
+                            <img src="https://media.karousell.com/media/photos/profiles/2021/04/18/tonytoh8888_1618750501.jpg" alt=""
+                                 class="w-[32px] h-[32px] rounded-full">
+                            <div class="header__name flex flex-col justify-center">
+                                <p class="text-[14px] leading-[22px] font-bold text-[#2c2c2d]">
+                                    planet888
+                                </p>
+                                <p class="text-[12px] leading-[20px] text-[#57585a]">
+                                    26 minutes ago
+                                </p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-        @endforeach
-    </div>
+            @endforeach
+        </div>
 
-    {{-- button prev--}}
-    <div class="listed__prev3 mobile:hidden">
-        <i class="fas fa-chevron-left z-[9]
+        {{-- button prev--}}
+        <div class="listed__prev3 mobile:hidden">
+            <i class="fas fa-chevron-left z-[9]
            flex items-center justify-center
            w-[36px] h-[36px]
            absolute left-[-15px] top-[50%]
            bg-white rounded-full hover:shadow-xl" style="display: flex;"></i>
-    </div>
+        </div>
 
-    {{-- button next--}}
-    <div class="listed__next3 mobile:hidden">
-        <i class="fas fa-chevron-right z-[9]
+        {{-- button next--}}
+        <div class="listed__next3 mobile:hidden">
+            <i class="fas fa-chevron-right z-[9]
            flex items-center justify-center
            w-[36px] h-[36px] right-[-15px]
            absolute top-[50%]
            bg-white rounded-full hover:shadow-xl" style="display: flex" ></i>
+        </div>
+
     </div>
 
-</div>
-
-{{-- Explore Cars--}}
-<div class="relative mx-auto pt-[20px] mb-[50px]
+    {{-- Explore Cars--}}
+    <div class="relative mx-auto pt-[20px] mb-[50px]
    mt-[30px] mobile:mt-[50px]
     xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%]
     xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:mx-auto">
-    <div class="listed__title flex justify-between items-center mb-[30px]">
-        <p class="text-[24px] leading-[32px] font-bold">
-            Explore Cars
-        </p>
+        <div class="listed__title flex justify-between items-center mb-[30px]">
+            <p class="text-[24px] leading-[32px] font-bold">
+                Explore Cars
+            </p>
+        </div>
+        <div class="flex gap-[20px] overflow-x-hidden mobile:overflow-x-auto">
+            @foreach($exploreCars as $ex)
+                <div class="flex flex-col justify-between">
+                    <img src="{{$ex}}" class="w-[300px] h-auto rounded-lg">
+                    <a href="https://www.carousell.sg"
+                       class="mt-[10px] flex flex-col gap-[5px]">
+                        <p class="font-bold text-[16px] leading-[24px]">
+                            Add your car into the Carousell Garage
+                        </p>
+                        <p class="text-[14px] leading-[22px] text-[#2c2c2d]">
+                            See your car's market value and traffic fine
+                        </p>
+                        <p class="font-bold text-[16px] leading-[24px] text-[#008f79]">
+                            Find out more
+                        </p>
+                    </a>
+                </div>
+            @endforeach
+        </div>
     </div>
-   <div class="flex gap-[20px] overflow-x-hidden mobile:overflow-x-auto">
-       @foreach($exploreCars as $ex)
-           <div class="flex flex-col justify-between">
-               <img src="{{$ex}}" class="w-[300px] h-auto rounded-lg">
-               <a href="https://www.carousell.sg"
-               class="mt-[10px] flex flex-col gap-[5px]">
-                   <p class="font-bold text-[16px] leading-[24px]">
-                       Add your car into the Carousell Garage
-                   </p>
-                   <p class="text-[14px] leading-[22px] text-[#2c2c2d]">
-                       See your car's market value and traffic fine
-                   </p>
-                   <p class="font-bold text-[16px] leading-[24px] text-[#008f79]">
-                       Find out more
-                   </p>
-               </a>
-           </div>
-       @endforeach
-   </div>
-</div>
 
-{{-- Search Topics--}}
-<div  class="relative mx-auto pt-[20px] mb-[50px]
+    {{-- Search Topics--}}
+    <div  class="relative mx-auto pt-[20px] mb-[50px]
    mt-[30px] mobile:mt-[50px] mobile:hidden
     xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%]
     xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:mx-auto">
-    <div class="flex justify-between gap-[10px]">
-        @foreach($topicSearch as $to)
-            <div class="flex flex-col gap-[10px]">
-                <p class="text-[12px] leading-[20px] font-bold">
-                    {{$to}}
-                </p>
-                <div class="flex flex-col gap-[5px]">
-                    @foreach($brandSearch as $brand)
-                        <a href="https://www.carousell.sg"
-                            class="text-[12px] leading-[20px]
+        <div class="flex justify-between gap-[10px]">
+            @foreach($topicSearch as $to)
+                <div class="flex flex-col gap-[10px]">
+                    <p class="text-[12px] leading-[20px] font-bold">
+                        {{$to}}
+                    </p>
+                    <div class="flex flex-col gap-[5px]">
+                        @foreach($brandSearch as $brand)
+                            <a href="https://www.carousell.sg"
+                               class="text-[12px] leading-[20px]
                             hover:underline hover:text-[#008f79]">
-                            {{$brand}}
-                        </a>
-                    @endforeach
+                                {{$brand}}
+                            </a>
+                        @endforeach
+                    </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
     </div>
-</div>
 
-<script src="./js/used-cars.js"></script>
-<script src="./js/utilities-functions.js"></script>
-<style>
+    <script src="./js/used-cars.js"></script>
+    <script src="./js/utilities-functions.js"></script>
+    <style>
         .bgSearch {
             background-image: linear-gradient(360deg, rgba(44, 44, 45, 0.08) 1.88%, rgba(44, 44, 45, 0.34) 29.75%, rgba(44, 44, 45, 0.34) 61.75%, rgba(44, 44, 45, 0.18) 97.85%), url("https://sl3-cdn.karousell.com/homescreens/web/bg_cars_homescreen_sg.png");
             background-repeat: no-repeat;
