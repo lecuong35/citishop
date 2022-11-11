@@ -362,7 +362,7 @@
                                class="bi__body px-[5px] flex flex-col">
                                 <img src="{{$bi}}" alt=""
                                      class="rounded-md w-[100%] h-[240px] my-[10px]">
-                                <div class="body__describe">
+                                <div class="body__describe mb-[10px]">
                                     <p class="text-[14px] leading-[22px] text-[#57585a]">
                                         Kids balance bicycle
                                     </p>
@@ -428,7 +428,7 @@
                                class="bi__body px-[5px] flex flex-col">
                                 <img src="{{$co}}" alt=""
                                      class="rounded-md w-[100%] h-[240px] my-[10px]">
-                                <div class="body__describe">
+                                <div class="body__describe mb-[10px]">
                                     <p class="text-[14px] leading-[22px] text-[#57585a]">
                                         Kids balance bicycle
                                     </p>
@@ -494,7 +494,7 @@
                                class="bi__body px-[5px] flex flex-col">
                                 <img src="{{$le}}" alt=""
                                      class="rounded-md w-[100%] h-[240px] my-[10px]">
-                                <div class="body__describe">
+                                <div class="body__describe mb-[10px]">
                                     <p class="text-[14px] leading-[22px] text-[#57585a]">
                                         Kids balance bicycle
                                     </p>
@@ -560,7 +560,7 @@
                                class="bi__body px-[5px] flex flex-col">
                                 <img src="{{$ik}}" alt=""
                                      class="rounded-md w-[100%] h-[240px] my-[10px]">
-                                <div class="body__describe">
+                                <div class="body__describe mb-[10px]">
                                     <p class="text-[14px] leading-[22px] text-[#57585a]">
                                         Kids balance bicycle
                                     </p>
@@ -626,7 +626,7 @@
                                class="bi__body px-[5px] flex flex-col">
                                 <img src="{{$bro}}" alt=""
                                      class="rounded-md w-[100%] h-[240px] my-[10px]">
-                                <div class="body__describe">
+                                <div class="body__describe mb-[10px]">
                                     <p class="text-[14px] leading-[22px] text-[#57585a]">
                                         Kids balance bicycle
                                     </p>
@@ -692,7 +692,7 @@
                                class="bi__body px-[5px] flex flex-col">
                                 <img src="{{$pl}}" alt=""
                                      class="rounded-md w-[100%] h-[240px] my-[10px]">
-                                <div class="body__describe">
+                                <div class="body__describe mb-[10px]">
                                     <p class="text-[14px] leading-[22px] text-[#57585a]">
                                         Kids balance bicycle
                                     </p>
@@ -769,7 +769,7 @@
                            class="bi__body px-[5px] flex flex-col">
                             <img src="{{$slash}}" alt=""
                                  class="rounded-md w-[100%] h-[240px] my-[10px]">
-                            <div class="body__describe">
+                            <div class="body__describe mb-[10px] mb-[10px]">
                                 <p class="text-[14px] leading-[22px] text-[#57585a]">
                                     Kids balance bicycle
                                 </p>
@@ -846,7 +846,7 @@
                                class="bi__body px-[5px] flex flex-col">
                                 <img src="{{$re}}" alt=""
                                      class="rounded-md w-[100%] h-[240px] my-[10px]">
-                                <div class="body__describe">
+                                <div class="body__describe mb-[10px]">
                                     <p class="text-[14px] leading-[22px] text-[#57585a]">
                                         Kids balance bicycle
                                     </p>

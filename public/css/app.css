@@ -3466,6 +3466,10 @@ textarea.form-control.is-invalid {
   margin-left: 0px;
   margin-right: 0px;
 }
+.mx-\[10px\] {
+  margin-left: 10px;
+  margin-right: 10px;
+}
 .mb-\[10px\] {
   margin-bottom: 10px;
 }
@@ -4212,6 +4216,9 @@ textarea.form-control.is-invalid {
 }
 .p-6 {
   padding: 1.5rem;
+}
+.p-\[10px\] {
+  padding: 10px;
 }
 .px-\[15px\] {
   padding-left: 15px;
@@ -5155,6 +5162,14 @@ textarea.form-control.is-invalid {
 
   .mobile\:z-\[5\] {
     z-index: 5;
+  }
+
+  .mobile\:z-\[999\] {
+    z-index: 999;
+  }
+
+  .mobile\:z-\[9999\] {
+    z-index: 9999;
   }
 
   .mobile\:mx-auto {
