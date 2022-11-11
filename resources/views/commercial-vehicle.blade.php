@@ -160,7 +160,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="body__describe mt-[20px]">
+                        <div class="body__describe mb-[10px] mt-[20px]">
                             <p class="text-[14px] leading-[22px] text-[#57585a]">
                                 Kids balance bicycle
                             </p>
@@ -231,7 +231,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="body__describe mt-[20px]">
+                        <div class="body__describe mb-[10px] mt-[20px]">
                             <p class="text-[14px] leading-[22px] text-[#57585a]">
                                 Kids balance bicycle
                             </p>

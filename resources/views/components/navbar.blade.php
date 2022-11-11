@@ -1,24 +1,26 @@
 @php
+    session_start();
     $showCategories = Config::get('products.category');
 
     $index = 20;
     $cateIndex = 14;
     $cateId = 1;
-@endphp
-<div class="wrapper font-roboto w-full top-0
-        fixed bg-white z-10 mobile:z-[5]">
 
+@endphp
+<div class="wrapper font-roboto w-full top-0 h-[50px]
+        fixed bg-white z-10 mobile:z-[5]">
   <div class="xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:ml-0
         xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full
          flex mx-auto justify-between mobile:flex-row-reverse mobile:justify-between">
       {{-- navbar nav--}}
       <div class="navigate flex items-center h-[50px] mobile:hidden">
           {{-- navbar check--}}
-          <div class="navigate__logo h-full flex">
+          <a href="/"
+              class="navigate__logo h-full flex">
               <img src="https://mweb-cdn.karousell.com/build/carousell-logo-title-2Nnf7YFiNk.svg"
                    class="w-[168px] mr-[24px]
             xl:min-w-[150px] lg:min-w-[150px] md:min-w-[150px] sm:min-w-[100px] mobile:hidden" alt="">
-          </div>
+          </a>
           <div class="flex navigate__items h-full
         xl:flex lg:flex md:hidden sm:hidden mobile:hidden">
               {{-- nav 1--}}
@@ -283,19 +285,126 @@
       </div>
 
       {{-- login register --}}
-      <div class="auth-navigate flex items-center justify-end bg-white">
-          <a href="http://carousell.sg"
-              class="text-[16px] font-bold leading-[21px] h-full px-[16px]
-          flex items-center hover:bg-[#f0f0f1] mobile:hidden">
-              Register
-          </a>
-          <a href="http://carousell.sg"
-              class="text-[16px] font-bold leading-[24px]
-          mobile:text-[#008f79]
-          h-full px-[16px]
-          flex items-center hover:bg-[#f0f0f1]">
-              Login
-          </a>
+      <div class="auth-navigate flex items-center justify-end
+      bg-white h-[50px]">
+          @if(isset($_SESSION['login']))
+              @if($_SESSION['login'] == 1 )
+                  <div class="px-[5px] py-[5px]
+                  flex items-center justify-center
+                  hidden mobile:flex
+                  hover:bg-[#f0f0f1]" id="welcome-toggle-click"
+                  onclick="account('welcome-toggle')">
+                      <i class="fa fa-bars h-[20px] w-[20px]">
+                      </i>
+                  </div>
+
+                  <div class="flex mx-[5px] h-full items-center justify-center">
+                      <div class="relative h-full">
+                          <div class="welcome px-[10px] py-[5px] w-fit h-full
+                            hover:bg-[#f0f0f1]
+                            mobile:hidden">
+                              @if(isset($_SESSION['name']))
+                                  <div class="flex gap-[5px] h-full items-center justify-center">
+                                      <img src="https://media.karousell.com/media/photos/profiles/2022/11/11/cuongle35280503_1668137390_8784d913.jpg"
+                                           class="w-[20px] h-[20px] " style="border-radius: 50%">
+                                      <p class="text-[16px] leading-[24px] flex">
+                                          Hello,
+                                          <span class="font-bold">
+                                          {{$_SESSION['name']}}
+                                      </span>
+                                      </p>
+                                  </div>
+                              @endif
+                          </div>
+
+                          <div class="welcomeToggle absolute z-10 bg-white w-[200px] hidden
+                          mobile:fixed mobile:w-full mobile:h-full
+                          mobile:left-0 mobile:top-0 mobile:z-[9999]" id="welcome-toggle">
+                              <div class="hidden mobile:flex items-center justify-between
+                              px-[10px] py-[10px] shadow-xl">
+                                  <i class="fas fa-arrow-left fa-xl"
+                                     onclick="account('welcome-toggle')"></i>
+                                  <p class="text-[18px] leading-[24px] font-bold">
+                                      My Account
+                                  </p>
+                                  <div class="div-for-nothing">
+                                  </div>
+                              </div>
+                              <a href="https://www.carousell.sg"
+                                  class="flex gap-[10px] py-[10px] px-[10px]
+                              hover:bg-[#f0f0f1] hover:text-[#008f79]">
+                                  <div>
+                                      <i class="fas fa-user-circle fa-xl  w-[20px] h-[20px]"></i>
+                                  </div>
+                                  <p>
+                                      Profile
+                                  </p>
+                              </a>
+                              <a href="https://www.carousell.sg"
+                                  class="flex gap-[10px] px-[10px] py-[10px]
+                              hover:bg-[#f0f0f1] hover:text-[#008f79]">
+                                  <div>
+                                      <i class="fas fa-cog fa-xl  w-[20px] h-[20px]"></i>
+                                  </div>
+                                  <p>
+                                      Settings
+                                  </p>
+                              </a>
+                              <a href="https://www.carousell.sg"
+                                  class="flex gap-[10px] px-[10px] py-[10px]
+                              hover:bg-[#f0f0f1] hover:text-[#008f79]">
+                                 <img src="https://mweb-cdn.karousell.com/build/my-purchases-3J6hHnKqGL.svg"
+                                 class="w-[24px] h-[24px]">
+                                  <p>
+                                      My Purchases
+                                  </p>
+                              </a>
+                              <a href="https://www.carousell.sg"
+                                  class="flex gap-[10px] px-[10px] py-[10px]
+                              hover:bg-[#f0f0f1] hover:text-[#008f79]">
+                                  <img src="https://mweb-cdn.karousell.com/build/my-sales-3XOQDPjKCc.svg"
+                                  class="w-[24px] h-[24px]">
+                                  <p>
+                                      My Sales
+                                  </p>
+                              </a>
+                              <a href="/login"
+                                  class="flex gap-[10px] px-[10px] py-[10px]
+                              hover:bg-[#f0f0f1] hover:text-[#008f79]">
+                                  <div>
+                                      <i class="fas fa-sign-out-alt fa-xl  w-[20px] h-[20px]"></i>
+                                  </div>
+                                  <p>
+                                      Logout
+                                  </p>
+                              </a>
+                          </div>
+                      </div>
+                      <div class="px-[10px] py-[5px]  hover:bg-[#f0f0f1] h-full
+                      flex items-center justify-center mobile:hidden">
+                          <i class="fa fa-heart"></i>
+                      </div>
+                      <div class="px-[10px] py-[5px]
+                      flex items-center justify-center
+                      hover:bg-[#f0f0f1] h-full">
+                          <i class="fa fa-comment"></i>
+                      </div>
+                  </div>
+              @else
+                  <a href="/register"
+                     class="text-[16px] font-bold leading-[21px] h-full px-[16px]
+                       flex items-center hover:bg-[#f0f0f1] mobile:hidden">
+                      Register
+                  </a>
+                  <a href="/login"
+                     class="text-[16px] font-bold leading-[24px]
+                      mobile:text-[#008f79]
+                      h-full px-[16px]
+                      flex items-center hover:bg-[#f0f0f1]">
+                      Login
+                  </a>
+              @endif
+          @endif
           <button class="bg-[#ff2636] rounded-sm px-[24px] py-[4px] rounded-[4px]
             text-white font-bold text-[16px] leading-[24px]
             xl:block lg:block md:block sm:hidden
@@ -324,7 +433,7 @@
       </div>
   </div>
     <hr class="mobile:hidden">
-    <div class="my-[5px] mx-auto
+    <div class="py-[5px] mx-auto bg-white
     xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:ml-0
     xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:hidden">
         @include('components.search')
@@ -344,5 +453,12 @@
     .modal-backdrop{
         position: relative;
         z-index: 10;
+    }
+
+    .welcome:hover ~ .welcomeToggle {
+        display: block;
+    }
+    .welcomeToggle:hover {
+        display: block;
     }
 </style>

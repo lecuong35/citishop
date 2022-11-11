@@ -2,7 +2,8 @@
     $suggest = Config::get('products.footerLinks');
     $location = Config::get('products.locations');
 @endphp
-<div class="search flex flex-row justify-between gap-[5px] mobile:hidden z-[10]">
+<div class="search flex flex-row justify-between
+gap-[5px] mobile:hidden z-[10]">
     <div class="search__input1 relative" style="width: calc(100% - 350px)">
         <div class="relative">
             <i class="fa fa-search absolute top-[35%] left-[15px] opacity-60" ></i>
@@ -151,7 +152,7 @@
 
                 <div class="area flex items-center justify-between hover:bg-[#f0f0f1] py-[5px] px-[20px] mb-[10px]">
                     <div class="flex items-center">
-                        <img src="https://mweb-cdn.karousell.com/build/location-mrt-1ByybWDm38.svg"
+                        <img src="https://mweb-cdn.karousell.com/build/location-area-2GCzczZ_kg.svg"
                              class="w-[16px] h-[16px] mr-[20px]" alt="">
                         <p class="text-[#2c2c2d] text-[16px] leading-[22px]">
                             Area
@@ -177,7 +178,7 @@
 
                 <div class="neighbourhood flex items-center justify-between hover:bg-[#f0f0f1] py-[5px] px-[20px] mb-[10px]">
                     <div class="flex items-center">
-                        <img src="https://mweb-cdn.karousell.com/build/location-mrt-1ByybWDm38.svg"
+                        <img src="https://mweb-cdn.karousell.com/build/location-neighbourhood-3mplDMYV95.svg"
                              class="w-[16px] h-[16px] mr-[20px]" alt="">
                         <p class="text-[#2c2c2d] text-[16px] leading-[22px]">
                             Neighbourhood

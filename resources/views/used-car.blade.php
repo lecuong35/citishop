@@ -427,7 +427,7 @@ mobile:mt-[25px] fixed z-[9]
                                    bg-white rounded-full hover:shadow-xl" style="display: flex"></i>
                                 </div>
                             </div>
-                            <div class="body__describe mt-[20px]">
+                            <div class="body__describe mt-[20px] mb-[10px]" style="margin-bottom: 10px">
                                 <p class="text-[14px] leading-[22px] text-[#57585a]">
                                     Kids balance bicycle
                                 </p>
@@ -507,7 +507,7 @@ mobile:mt-[25px] fixed z-[9]
             @foreach($cars as $key => $ca)
                 <div class="bi p-[5px] w-[25%] hover:shadow-2xl flex flex-col justify-between h-[450px]">
                     <div>
-                        <div class="listed__body px-[5px] flex flex-col">
+                        <div class="listed__body px-[5px] mb-[10px] flex flex-col">
                             <div class="relative imgBox">
                                 <div class="caItems3 w-[100%] h-[240px] relative"
                                      id="caItems3{{$key}}">
@@ -540,7 +540,7 @@ mobile:mt-[25px] fixed z-[9]
                                    bg-white rounded-full hover:shadow-xl" style="display: flex"></i>
                                 </div>
                             </div>
-                            <div class="body__describe mt-[20px]">
+                            <div class="body__describe mt-[20px] flex flex-col gap-[10px]" style="margin-bottom: 10px">
                                 <p class="text-[14px] leading-[22px] text-[#57585a]">
                                     Kids balance bicycle
                                 </p>
@@ -552,7 +552,7 @@ mobile:mt-[25px] fixed z-[9]
                                 </p>
                             </div>
                         </div>
-                        <a class="bi__footer flex items-center"
+                        <a class="bi__footer flex items-center gap-[10px]"
                            href="http://www.carousell.sg">
                             <i class="far fa-heart" style="color: #57585a"></i>
                             <p class="text-[12px] text-[#57585a] leading-[20px]">

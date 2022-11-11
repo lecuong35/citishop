@@ -1,3 +1,8 @@
+@php
+        session_start();
+        $email = Config::get('login.email');
+        $password = Config::get('login.password');
+@endphp
 <!doctype html>
 <html>
 <head>
@@ -30,12 +35,27 @@
                 </button>
             </div>
             <p class="text-center text-lg mt-4 text-[#008f79]">OR</p>
-            <form action="" class="space-y-6 py-6">
+            <form action="/auth/login" method="post" class="space-y-6 py-6">
+                @csrf
+                @method('post')
                 <div>
-                <input type="text" class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleFormControlInput2" placeholder="Username or email"/>
+                <input type="text"
+                       class="form-control block w-full px-4 py-2
+                       text-xl font-normal text-gray-700 bg-white bg-clip-padding
+                       border border-solid border-gray-300 rounded transition ease-in-out m-0
+                       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                       id="exampleFormControlInput2"
+                       name="email"
+                       placeholder="Username or email"/>
                 </div>
                 <div>
-                    <input type="text" class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleFormControlInput2" placeholder="Password"/>                        
+                    <input type="text"
+                           class="form-control block w-full px-4 py-2
+                           text-xl font-normal text-gray-700 bg-white bg-clip-padding
+                           border border-solid border-gray-300 rounded transition ease-in-out
+                           m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                           name="password"
+                           id="exampleFormControlInput3" placeholder="Password"/>
                     <div class="mt-1">
                         <button type="reset">
                             <span class="text-[#57585a] text-lg hover:text-[#008f79] hover:underline" >Forgot password ?</span>
@@ -43,7 +63,9 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <button class="w-full px-6 py-3 rounded-md bg-[#c5c5c6] transition hover:bg-sky-600 focus:bg-[#008f79]">
+                    <button class="w-full px-6 py-3 rounded-md bg-[#c5c5c6] transition hover:bg-sky-600 focus:bg-[#008f79]"
+                            type="submit"
+                            id="login">
                         <span class="font-semibold text-white text-lg">Login</span>
                     </button>
                     <div class="mt-5">
@@ -53,11 +75,11 @@
             </form>
         </div>
         @include('auth.components.login-face')
-       
+
     </section>
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
     <script type="text/javascript">
-        
+
         document.getElementById('login-face').addEventListener('click',
         function(){
             document.querySelector('.modal-login').style.display = 'inline';
@@ -69,4 +91,3 @@
     </script>
 </body>
 </html>
-  
