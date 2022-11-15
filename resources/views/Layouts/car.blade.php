@@ -164,17 +164,23 @@
             </div>
 
             <div class="trendingCar mobile:bg-white
-            justify-center items-center w-full">
+            justify-center items-center w-full
+            mobile:px-[16px]">
                 <p class="text-[16px] leading-[24px] text-white
-                font-bold mobile:font-normal mobile:text-[#000]
-                mobile:py-[10px]">Trending: </p>
-                <div class="text-[16px] leading-[24px] text-white flex
-                mobile:overflow-x-auto mobile:flex">
+                font-bold mobile:font-normal mobile:text-[#57585a]
+                mobile:py-[16px] mobile:pl-[6px]">
+                    Trending:
+                </p>
+                <div class="text-[16px] leading-[24px]
+                text-white inline-flex
+                whitespace-nowrap flex-wrap
+                gap-[5px] mobile:flex-nowrap
+                mobile:overflow-x-auto mobile:flex mobile:gap-[10px]">
                     @foreach($trending as $tre)
-                        <div class="mobile:px-[10px] mobile:py-[5px] mobile:rounded-full
+                        <div class="mobile:px-[16px] mobile:py-[8px] mobile:rounded-full
                             mobile:bg-[#f0f0f1] mobile:gap-[10px]">
                             <a href="https://www.carousell.sg"
-                               class="hover:underline text-[#fff] mobile:text-[#000]
+                               class="hover:underline text-[#fff] mobile:text-[#57585a]
                                    mobile:whitespace-nowrap mobile:inline-block">
                                 {{ $tre }},
                             </a>
@@ -238,10 +244,7 @@
         </div>
 
         {{-- topic items--}}
-        <div class="listed__price overflow-x-hidden flex flex-row nowrap relative
-        mobile:overflow-x-auto" >
             @yield('popularCar')
-        </div>
     </div>
 
     {{-- Explore Cars--}}

@@ -2,8 +2,8 @@ $('.slides__access').slick({
     infinite: true,
     slidesToShow: 2,
     slidesToScroll: 1,
-    nextArrow: '.access__next',
-    prevArrow: '.access__prev',
+    nextArrow: '.commercial__next',
+    prevArrow: '.commercial__prev',
     responsive: [
         {
             breakpoint: 480,

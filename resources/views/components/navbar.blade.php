@@ -9,8 +9,7 @@
 @endphp
 <div class="wrapper font-roboto w-full top-0 h-[50px]
         fixed bg-white z-10 mobile:z-[5]">
-  <div class="xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:ml-0
-        xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full
+    <div class="xl:px-[15%] lg:px-[5%] md:px-[5%] sm:w-full mobile:ml-0
          flex mx-auto justify-between mobile:flex-row-reverse mobile:justify-between">
       {{-- navbar nav--}}
       <div class="navigate flex items-center h-[50px] mobile:hidden">
@@ -167,7 +166,9 @@
               <div class="categories text-[16px] leading-[24px] h-full relative">
                   <div class="px-[16px] hover:bg-[#f0f1f1] h-full flex items-center"
                   data-bs-target="#example1" data-bs-toggle="modal">
-                      All Categories
+                      <p class="inline-block whitespace-nowrap">
+                          All Categories
+                      </p>
                       <span class="ml-[5px]
                          xl:block lg:hidden md:hidden sm:hidden mobile:hidden">
                         <i class="fa fa-heart" ></i>
@@ -287,8 +288,7 @@
       {{-- login register --}}
       <div class="auth-navigate flex items-center justify-end
       bg-white h-[50px]">
-          @if(isset($_SESSION['login']))
-              @if($_SESSION['login'] == 1 )
+              @if(isset($_SESSION['login']) && $_SESSION['login'] == 1 )
                   <div class="px-[5px] py-[5px]
                   flex items-center justify-center
                   hidden mobile:flex
@@ -392,20 +392,23 @@
                   </div>
               @else
                   <a href="/register"
-                     class="text-[16px] font-bold leading-[21px] h-full px-[16px]
+                     class="text-[14px] font-bold leading-[22px] h-full px-[16px]
+                     text-[#414244]
                        flex items-center hover:bg-[#f0f0f1] mobile:hidden">
                       Register
                   </a>
                   <a href="/login"
-                     class="text-[16px] font-bold leading-[24px]
+                     class="text-[14px] font-bold leading-[22px]
+                     text-[#414244]
                       mobile:text-[#008f79]
-                      h-full px-[16px]
+                      h-full px-[16px] mobile:mt-[5px]
                       flex items-center hover:bg-[#f0f0f1]">
                       Login
                   </a>
               @endif
-          @endif
+
           <button class="bg-[#ff2636] rounded-sm px-[24px] py-[4px] rounded-[4px]
+          ml-[10px]
             text-white font-bold text-[16px] leading-[24px]
             xl:block lg:block md:block sm:hidden
             mobile:hidden">
@@ -415,15 +418,15 @@
 
 {{-- mobile nav--}}
       <div class="nav__mobile w-full hidden mobile:flex
-      sticky-top top-0
+      sticky-top top-0 py-[5px]
       mobile:items-center mobile:justify-evenly">
-          <a href="http://carousell.sg">
+          <a href="/">
               <img src="https://play-lh.googleusercontent.com/kKAzG4q6hhx6dprYBdzFTsUeZocqwsuTL-dvuotPjHDaP1CdBdS2wO8VeQzTntNIo7-u"
               class="w-[48px] h-[48px]">
           </a>
 
           <div>
-              <div class="search__form relative">
+              <div class="search__form relative w-[252px]">
                   <i class="fa fa-search absolute top-[35%] left-[5px] opacity-60" ></i>
                   <input type="text" class="h-[40px] w-full bg-[#f0f1f1] rounded-md
                   pl-[25px] text-[14px] leading-[22px] "
@@ -434,8 +437,8 @@
   </div>
     <hr class="mobile:hidden">
     <div class="py-[5px] mx-auto bg-white
-    xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:ml-0
-    xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:hidden">
+    xl:px-[15%] lg:px-[5%] md:px-[5%] sm:w-full mobile:ml-0
+    mobile:hidden">
         @include('components.search')
     </div>
     <hr>

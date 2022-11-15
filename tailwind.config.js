@@ -17,7 +17,7 @@ module.exports = {
                 'sm': '640px',
                 'md': '768px',
                 'lg': '1024px',
-                'xl': {'min': '1260px'},
+                'xl': {'min': '1360px'},
                 'mobile': {'max': '640px'}
             },
             colors: {

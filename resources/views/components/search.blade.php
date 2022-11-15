@@ -37,7 +37,7 @@ gap-[5px] mobile:hidden z-[10]">
             class="h-[44px] bg-[#f0f1f1]
             w-full px-[30px]
             rounded-lg outline-none">
-            <button class="bg-[#026958] rounded-lg px-[15px] py-[5px]
+            <button class="bg-[#008f79] rounded-lg px-[15px] py-[5px]
             h-[38px] absolute top-[-10px] ml-[-80px]
             text-[14px] leading-[22px] text-white font-bold">
                 <a href="/search">
@@ -186,8 +186,8 @@ gap-[5px] mobile:hidden z-[10]">
                     </div>
                     <i class="fa fa-chevron-right opacity-60"></i>
                 </div>
-                <div class="neighbourhood__toggle h-[450px] w-[300px]
-                absolute top-0 right-[-108%] hidden
+                <div class="neighbourhood__toggle h-[450px] w-[240px]
+                absolute top-0 left-[180px] hidden
                 overflow-y-auto shadow-xl py-[20px] opacity-0
                 bg-white rounded-xl z-[9]" style="transition: opacity .5s ease-in-out">
                     @foreach($location as $lo)
