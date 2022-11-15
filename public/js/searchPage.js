@@ -4,7 +4,7 @@ function changeBg(bgId, eleId) {
 
     if (bg.style.backgroundColor == "rgb(240 241 241 / var(--tw-bg-opacity))") {
         bg.style.backgroundColor = "rgb(2 105 88 / var(--tw-bg-opacity))";
-        circle.style.transform = "translateX(27px)";
+        circle.style.transform = "translateX(30px)";
     }
     else {
         bg.style.backgroundColor = "rgb(240 241 241 / var(--tw-bg-opacity))";

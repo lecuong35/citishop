@@ -44,7 +44,7 @@ $('.slashed__price').slick({
     slidesToShow: 5,
     slidesToScroll: 2,
     nextArrow: '.slash__next',
-    prevArrow: '.slash_prev',
+    prevArrow: '.slash__prev',
     responsive: [
         {
             breakpoint: 1024,

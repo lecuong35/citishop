@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('Layouts.app')
 
 @section('content')
     @php
@@ -41,19 +41,19 @@
                             <svg class="D_aNI" fill="#57585a" fill-rule="nonzero" height="25" viewBox="0 0 16 16" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M4.86197 3.52794L7.52828 0.861631L7.53151 0.858423C7.59476 0.795922 7.6674 0.748648 7.74485 0.716601C7.82346 0.684006 7.90965 0.666016 8.00004 0.666016C8.18414 0.666016 8.3508 0.740635 8.47145 0.861278L11.1381 3.52794C11.3985 3.78829 11.3985 4.2104 11.1381 4.47075C10.8778 4.7311 10.4557 4.7311 10.1953 4.47075L8.66671 2.94216V10.666C8.66671 11.0342 8.36823 11.3327 8.00004 11.3327C7.63185 11.3327 7.33337 11.0342 7.33337 10.666V2.94216L5.80478 4.47075C5.54443 4.7311 5.12232 4.7311 4.86197 4.47075C4.60162 4.2104 4.60162 3.78829 4.86197 3.52794Z" fill="#57585a"></path><path d="M13.3334 14.666V7.33268H11.3334C10.9652 7.33268 10.6667 7.0342 10.6667 6.66602C10.6667 6.29783 10.9652 5.99935 11.3334 5.99935H14C14.3682 5.99935 14.6667 6.29783 14.6667 6.66602V15.3327C14.6667 15.7009 14.3682 15.9993 14 15.9993H2.00004C1.63185 15.9993 1.33337 15.7009 1.33337 15.3327V6.66602C1.33337 6.29783 1.63185 5.99935 2.00004 5.99935H4.66671C5.0349 5.99935 5.33337 6.29783 5.33337 6.66602C5.33337 7.0342 5.0349 7.33268 4.66671 7.33268H2.66671V14.666H13.3334Z" fill="#57585a"></path></svg>
                             <span class="ml-2">share</span>
                         </div>
-                    </a> 
+                    </a>
                     <a href="" class="absolute mb-60 mr-10 z-30 right-0 text-[#2c2c2d] hover:text-[#2c2c2d] hidden lg:inline-block">
                         <div class="bg-white flex py-2 px-2 rounded-md hover:bg-gray-300">
                             <svg class="D_aNI" height="25" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M17 1c3.852 0 7 3.148 7 7 0 3.858-2.067 7.513-5.44 10.724C16.158 21.01 13.04 23 12 23s-4.158-1.99-6.56-4.276C2.067 15.514 0 11.858 0 8c0-3.852 3.148-7 7-7 1.917 0 3.688.79 5 2.13C13.312 1.79 15.083 1 17 1zm0 2c-1.677 0-3.205.854-4.176 2.267a1 1 0 0 1-1.648 0C10.205 3.854 8.676 3 7 3 4.252 3 2 5.252 2 8c0 3.215 1.804 6.406 4.82 9.276C8.86 19.218 11.652 21 12 21c.347 0 3.14-1.782 5.18-3.724C20.197 14.406 22 11.215 22 8c0-2.748-2.252-5-5-5z" fill="#57585a"></path></svg>
                             <span class="ml-2">Likes</span>
                         </div>
-                    </a> 
+                    </a>
                     <button id="box-img-show" data-modal-target="#modal" class="absolute mt-60 mr-10 z-30 right-0 text-[#2c2c2d] hover:text-[#2c2c2d]">
                         <div class="bg-white flex py-2 px-2 rounded-md hover:bg-gray-300">
                             <svg class="D_aNI" height="25" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M3 3v18h18V3H3zM2 1h20a1 1 0 0 1 1 1v20a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zm4.7 15.7a1 1 0 1 1-1.4-1.4l2-2a1 1 0 0 1 1.3 0l4.3 3.4 4.4-4.4a1 1 0 0 1 1.4 1.4l-5 5a1 1 0 0 1-1.3 0L8 15.4l-1.4 1.4zM11 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" fill="#57585a" fill-rule="nonzero"></path></svg>
                             <span class="ml-2"> 5 images</span>
                         </div>
-                    </button>   
+                    </button>
                 </div>
             </div>
             <!-- slide-image end -->
@@ -148,11 +148,11 @@
                                                 <li class="name text-xl font-semibold text-[#2c2c2d] lg:text-2xl">Dylan Lee</li>
                                                 <li class="nickname py-2">@dyllyz</li>
                                                 <li class="time-joined">
-                                                    <img class="float-left mr-1 w-5 h-5" src="https://sl3-cdn.karousell.com/components/location_v4_1.svg" alt=""> 
+                                                    <img class="float-left mr-1 w-5 h-5" src="https://sl3-cdn.karousell.com/components/location_v4_1.svg" alt="">
                                                     Joined 1 year ago
                                                 </li>
                                                 <li class="reponsive py-2">
-                                                    <img alt="" class="float-left mr-1 w-5 h-5" src="https://mweb-cdn.karousell.com/build/response-rate-h-1v83pbBk4q.svg" title=""> 
+                                                    <img alt="" class="float-left mr-1 w-5 h-5" src="https://mweb-cdn.karousell.com/build/response-rate-h-1v83pbBk4q.svg" title="">
                                                     Very Responsive
                                                 </li>
                                                 <li>
@@ -259,7 +259,7 @@
                 </div>
             </div>
             <!-- product detail end -->
-            
+
             <!-- What others also search for in here -->
             <div class="list-tags px-4 lg:px-0">
                 <div class="heading text-2xl lg:text-3xl mt-10">What others also search for</div>
@@ -305,7 +305,7 @@
                         </div>
                     @endforeach
                 </div>
-               
+
             </div>
             <!-- Similar listings end -->
         </div>
@@ -328,7 +328,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
     <!-- end show images detail -->
 @endsection
