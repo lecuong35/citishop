@@ -15,7 +15,7 @@
             Apply
         </p>
     </div>
-    <div class="flex flex-col w-full mt-[65px]">
+    <div class="flex flex-col w-full mobile:mt-[65px]">
         @foreach($data as $ren)
             <div class="p-[12px] flex items-center gap-[10px] w-full
             border-b-[1px] border-solid border-[#c5c5c6]">

@@ -394,5 +394,23 @@ return [
         'treknogy',
         'japan foldable bike',
         'Hellu kkkk',
+    ],
+
+    'listingStatus' => [
+        'Active',
+        'Inactive',
+        'Reserved',
+        'Sold',
+    ],
+
+    'countries' => [
+        'Viet Nam',
+        'Laos',
+        'ThaiLands',
+        'Canada',
+        'Indonesia',
+        'Malaysia',
+        'Philippines',
+        'Singapore',
     ]
 ];

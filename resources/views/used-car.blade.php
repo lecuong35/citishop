@@ -1,22 +1,7 @@
 @extends('Layouts.car')
 
-@php
-    $headerSearch = Config::get('used-cars.headerSearch');
-    $body = Config::get('used-cars.body');
-    $depreciation = Config::get('used-cars.depreciation');
-    $trending = Config::get('used-cars.trending');
-    $topic = Config::get('used-cars.topic');
-    $topicNames = Config::get('used-cars.topicNames');
-    $popularBrands = Config::get('used-cars.popularBrands');
-    $popularBrandNames = Config::get('used-cars.popularBrandNames');
-    $cars = Config::get('used-cars.cars');
-    $showSlide = Config::get('products.slide');
-    $exploreCars = Config::get('used-cars.exploreCars');
-    $topicSearch = Config::get('used-cars.topicSearch');
-    $brandSearch = Config::get('products.footerLinks');
-@endphp
-
 @section('topicTitle')
+
     <p class="text-[30px] leading-[38px] font-bold text-white
                 mobile:text-[20px] mobile:leading-[28px]">
         Over 10,000 Used Cars in Singapore
@@ -45,7 +30,7 @@
                 <i class="fa fa-chevron-right hidden mobile:block"></i>
             </div>
         </div>
-        @include('components.modal-checkbox', ['data' =>  $body, 'title' => 'Body', 'id' => 'bodyToggle'])
+        @include('components.modal-checkbox', ['data' =>  $data['body'], 'title' => 'Body', 'id' => 'bodyToggle'])
     </div>
 @endsection
 
@@ -71,12 +56,12 @@
                 <i class="fa fa-chevron-right hidden mobile:block"></i>
             </div>
         </div>
-        @include('components.modal-radio', ['data'  => $depreciation, 'title' => 'Depreciation', 'id' => 'deToggle'])
+        @include('components.modal-radio', ['data'  => $data['depreciation'], 'title' => 'Depreciation', 'id' => 'deToggle'])
     </div>
 @endsection
 
 @section('topic')
-    @foreach($topic as $key=>$to)
+    @foreach($data['topic'] as $key=>$to)
         <div class=" bg-[#f0f1f1] px-[15px] pt-[15px] pb-[25px]
                     rounded-lg
                     xl:w-[15%] lg:w-[15%] md:w-[15%] sm:w-[15%]
@@ -86,7 +71,7 @@
                 <img src="{{$to}}"
                      alt="property"
                      class="w-[72px] mb-[10px]">
-                <p class="text-img">{{$topicNames[$key]}}</p>
+                <p class="text-img">{{$data['topicNames'][$key]}}</p>
             </a>
         </div>
     @endforeach
@@ -103,7 +88,7 @@
 
         <div class="menu__items relative">
             <div class="brandNames flex flex-row justify-start gap-[8px]">
-                @foreach($popularBrands as $keyBrand=>$brand)
+                @foreach($data['popularBrands'] as $keyBrand=>$brand)
                     <div class="px-[15px] pt-[15px]
                     xl:w-[15%] lg:w-[15%] md:w-[15%] sm:w-[15%]
                     hover:translate-y-[-7px] transition-transform">
@@ -115,17 +100,14 @@
                                 <img src="{{$brand}}"
                                      alt="property">
                             </div>
-                            <p class="text-img">{{$popularBrandNames[$keyBrand]}}</p>
+                            <p class="text-img">{{$data['popularBrandNames'][$keyBrand]}}</p>
                         </a>
                     </div>
                 @endforeach
             </div>
-            {{-- button prev--}}
             <div class="brands__prev mobile:hidden">
                 @include('components.prev-slick')
             </div>
-
-            {{-- button next--}}
             <div class="brands__next mobile:hidden">
                 @include('components.next-slick')
             </div>
@@ -140,19 +122,16 @@
    mt-[30px] mobile:mt-[50px] h-fit
     xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%]
     xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:mx-auto">
-        {{--         button prev--}}
         <div class="slides__prev mobile:hidden">
             @include('components.prev-slick')
         </div>
 
-        {{--         button next--}}
         <div class="slides__next mobile:hidden">
             @include('components.next-slick')
         </div>
 
-        {{--         slides show--}}
         <div class="slides__show flex flex-row nowrap w-full">
-            @foreach($showSlide as $slide)
+            @foreach($data['showSlide'] as $slide)
                 <a href="http://www.carousell.sg" class="w-[50%] h-auto rounded-lg mx-[5px]">
                     <img src="{{$slide}}"
                          alt="img"
@@ -167,7 +146,7 @@
 @section('listedCar')
     <div class="listed__price overflow-hidden flex flex-row nowrap relative
         mobile:overflow-y-auto h-fit" >
-        @foreach($cars as $key => $ca)
+        @foreach($data['cars'] as $key => $ca)
             <div class="bi p-[5px] w-[25%] hover:shadow-2xl flex flex-col justify-between h-[450px]">
                 <div>
                     <div class="listed__body px-[5px] flex flex-col">
@@ -181,17 +160,27 @@
                                     </a>
                                 @endforeach
                             </div>
-                            {{--button prev--}}
+
                             <div class="item__prev z-[12]
                                absolute top-[50%] left-0
                                mobile:hidden"
                                  id="item__prev{{$key}}">
-                                @include('components.prev-slick')
+                                <i class="fas fa-chevron-left z-[9]
+                                   flex items-center justify-center
+                                   w-[36px] h-[36px] opacity-30
+                                   hover:opacity-75
+                                   bg-white rounded-full hover:shadow-xl"
+                                   style="display: flex;"></i>
                             </div>
-                            {{--button next--}}
+
                             <div class="item__next z-[12] absolute top-[50%] right-0 mobile:hidden"
                                  id="item__next{{$key}}">
-                                @include('components.next-slick')
+                                <i class="fas fa-chevron-right z-[9]
+                                   flex items-center justify-center
+                                   w-[36px] h-[36px] opacity-30
+                                   hover:opacity-75
+                                   bg-white rounded-full hover:shadow-xl"
+                                   style="display: flex;"></i>
                             </div>
                         </div>
                         <div class="body__describe mt-[20px] mb-[10px]" style="margin-bottom: 10px">
@@ -232,12 +221,12 @@
         @endforeach
     </div>
 
-    {{-- button prev--}}
+
     <div class="listed__prev mobile:hidden">
         @include('components.prev-slick')
     </div>
 
-    {{-- button next--}}
+
     <div class="listed__next mobile:hidden">
         @include('components.next-slick')
     </div>
@@ -246,7 +235,7 @@
 @section('popularCar')
     <div class="listed__price3 overflow-x-hidden flex flex-row nowrap relative
         mobile:overflow-x-auto h-fit" >
-        @foreach($cars as $key => $ca)
+        @foreach($data['cars'] as $key => $ca)
             <div class="bi p-[5px] w-[25%] hover:shadow-2xl flex flex-col justify-between h-[450px]">
                 <div>
                     <div class="listed__body px-[5px] mb-[10px] flex flex-col">
@@ -260,17 +249,27 @@
                                     </a>
                                 @endforeach
                             </div>
-                            {{--button prev--}}
+
                             <div class="item__prev3 z-[12]
                                absolute top-[50%] left-0
                                mobile:hidden"
                                  id="item__prev3{{$key}}">
-                                @include('components.prev-slick')
+                                <i class="fas fa-chevron-left z-[9]
+                                   flex items-center justify-center
+                                   w-[36px] h-[36px] opacity-30
+                                   hover:opacity-75
+                                   bg-white rounded-full hover:shadow-xl"
+                                   style="display: flex;"></i>
                             </div>
-                            {{--button next--}}
+
                             <div class="item__next3 z-[12] absolute top-[50%] right-0 mobile:hidden"
                                  id="item__next3{{$key}}">
-                                @include('components.next-slick')
+                                <i class="fas fa-chevron-right z-[9]
+                                   flex items-center justify-center
+                                   w-[36px] h-[36px] opacity-30
+                                   hover:opacity-75
+                                   bg-white rounded-full hover:shadow-xl"
+                                   style="display: flex;"></i>
                             </div>
                         </div>
                         <div class="body__describe mt-[20px] flex flex-col gap-[10px]" style="margin-bottom: 10px">
@@ -311,12 +310,12 @@
         @endforeach
     </div>
 
-    {{-- button prev--}}
+
     <div class="listed__prev3 mobile:hidden">
         @include('components.prev-slick')
     </div>
 
-    {{-- button next--}}
+
     <div class="listed__next3 mobile:hidden">
         @include('components.next-slick')
     </div>
