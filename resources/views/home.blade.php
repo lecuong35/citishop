@@ -3,17 +3,6 @@
 @section('content')
     @php
         $_SESSION['login'] = 0;
-        $showBicycle = Config::get('products.bicycle');
-        $showCoffee = Config::get('products.coffeeTable');
-        $showLego = Config::get('products.lego');
-        $showIkea = Config::get('products.ikea');
-        $showBrompton = Config::get('products.brompton');
-        $showPlant = Config::get('products.plant');
-        $showCategories = Config::get('products.category');
-        $cateNames = Config::get('products.categoryNames');
-        $showSlash = Config::get('products.slashPrice');
-        $showRecommend = Config::get('products.recommendProduct');
-        $showSlide = Config::get('products.slide');
 
         $index = 20;
         $cateIndex = 14;
@@ -38,7 +27,7 @@
 
 {{--         slides show--}}
        <div class="slides__show flex flex-row nowrap w-full">
-           @foreach($showSlide as $slide)
+           @foreach($data['showSlide'] as $slide)
                <a href="http://www.carousell.sg" class="w-[50%] h-auto rounded-lg mx-[5px]">
                    <img src="{{$slide}}"
                         alt="img"
@@ -75,7 +64,7 @@
 
         <div class="menu__items overflow-y-hidden">
            <div class="flex flex-row overflow-y-auto justify-between gap-[7px] mobile:hidden">
-               @foreach($showCategories as $key => $ca)
+               @foreach($data['category'] as $key => $ca)
                    @if($key < 7)
                        <a href="http://www.carousell.sg"
                           class="property flex flex-col items-center text-center
@@ -85,7 +74,7 @@
                            <img src="{{$ca}}"
                                 alt="property"
                                 class="w-[72px] mb-[10px]">
-                           <p class="text-img text-[14px] leading-[22px]">{{$cateNames[$key]}}</p>
+                           <p class="text-img text-[14px] leading-[22px]">{{$data['categoryNames'][$key]}}</p>
                        </a>
                    @endif
                @endforeach
@@ -94,7 +83,7 @@
             <div class="xl:hidden lg:hidden md:hidden sm:hidden
             mobile:flex mobile:overflow-y-auto mobile:flex-col">
                 <div class="flex gap-[10px]">
-                    @foreach($showCategories as $key => $ca)
+                    @foreach($data['category'] as $key => $ca)
                        @if($key < $cateIndex)
                             <div class="w-[96px] h-[104px]
                             flex-col items-center justify-center">
@@ -106,14 +95,14 @@
                                 <div class="w-[96px] text-center">
                                     <p class=" text-[14px] leading-[22px]
                                      mt-[8px]
-                                    inline-block">{{$cateNames[$key]}}</p>
+                                    inline-block">{{$data['categoryNames'][$key]}}</p>
                                 </div>
                             </div>
                         @endif
                     @endforeach
                 </div>
                 <div class="flex mt-[5px] gap-[10px]">
-                    @foreach($showCategories as $key => $ca)
+                    @foreach($data['category'] as $key => $ca)
                         @if($key >= $cateIndex)
                             <div class="w-[96px] h-[104px]
                             flex-col items-center justify-center">
@@ -125,7 +114,7 @@
                                 <div class="w-[96px] text-center">
                                     <p class=" text-[14px] leading-[22px]
                                      mt-[8px]
-                                    inline-block">{{$cateNames[$key]}}</p>
+                                    inline-block">{{$data['categoryNames'][$key]}}</p>
                                 </div>
                             </div>
                         @endif
@@ -197,7 +186,7 @@
         {{-- topic items--}}
         <div id="bi1" class="w-full">
             <div class="bicycle__topic overflow-hidden flex flex-row nowrap relative" style="display: flex">
-                @foreach($showBicycle as $bi)
+                @foreach($data['bicycle'] as $bi)
                     @include('components.product', ['imgSrc' => $bi])
                 @endforeach
             </div>
@@ -214,7 +203,7 @@
 
         <div style="display: none;" id="co2">
             <div class="coffee__topic overflow-hidden flex flex-row nowrap relative">
-                @foreach($showCoffee as $co)
+                @foreach($data['coffeeTable'] as $co)
                    @include('components.product', ['imgSrc' => $co])
                 @endforeach
             </div>
@@ -231,7 +220,7 @@
 
         <div style="display: none;" id="le3" class="w-full">
             <div class="lego__topic overflow-hidden flex flex-row nowrap relative w-full">
-                @foreach($showLego as $le)
+                @foreach($data['lego'] as $le)
                    @include('components.product', ['imgSrc' => $le])
                 @endforeach
             </div>
@@ -248,7 +237,7 @@
 
         <div style="display: none" id="ik4">
             <div class="ikea__topic overflow-hidden flex flex-row nowrap relative">
-                @foreach($showIkea as $ik)
+                @foreach($data['ikea'] as $ik)
                   @include('components.product', ['imgSrc' => $ik])
                 @endforeach
             </div>
@@ -265,7 +254,7 @@
 
         <div style="display: none" id="bro5">
             <div class="brompton__topic overflow-hidden flex flex-row nowrap relative">
-                @foreach($showBicycle as $bro)
+                @foreach($data['bicycle'] as $bro)
                     @include('components.product', ['imgSrc' => $bro])
                 @endforeach
             </div>
@@ -282,7 +271,7 @@
 
         <div style="display: none" id="pl6">
             <div class="plants__topic overflow-hidden flex flex-row nowrap relative">
-                @foreach($showPlant as $pl)
+                @foreach($data['plant'] as $pl)
                     @include('components.product', ['imgSrc' => $pl])
                 @endforeach
             </div>
@@ -312,7 +301,7 @@
         {{-- topic items--}}
         <div class="slashed__price overflow-hidden flex flex-row nowrap relative
         mobile:overflow-y-auto" >
-            @foreach($showSlash as $slash)
+            @foreach($data['slashPrice'] as $slash)
                 @include('components.product', ['imgSrc' => $slash])
             @endforeach
         </div>
@@ -340,7 +329,7 @@
         {{-- topic items--}}
         <div class="recommend overflow-hidden grid grid-cols-4 relative
         mobile:grid-cols-2">
-            @foreach($showRecommend as $re)
+            @foreach($data['recommendProduct'] as $re)
                 @include('components.product', ['imgSrc' => $re])
             @endforeach
         </div>

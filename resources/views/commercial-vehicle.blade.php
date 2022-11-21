@@ -1,29 +1,5 @@
 @extends('Layouts.car');
 
-@php
-    $headerSearch = Config::get('used-cars.headerSearch');
-    $body = Config::get('used-cars.body');
-    $depreciation = Config::get('used-cars.depreciation');
-    $trending = Config::get('used-cars.trending');
-    $topic = Config::get('used-cars.topic');
-    $topicNames = Config::get('used-cars.topicNames');
-    $popularBrands = Config::get('used-cars.popularBrands');
-    $popularBrandNames = Config::get('used-cars.popularBrandNames');
-    $cars = Config::get('used-cars.cars');
-    $showSlide = Config::get('products.slide');
-    $exploreCars = Config::get('used-cars.exploreCars');
-    $topicSearch = Config::get('used-cars.topicSearch');
-    $brandSearch = Config::get('products.footerLinks');
-
-    $rentalCarNames = Config::get('rental-cars.rentalCarNames');
-    $options = Config::get('rental-cars.options');
-    $rentalTopics = Config::get('rental-cars.rentalTopics');
-    $listRentalCars = Config::get('rental-cars.listRentalCars');
-
-    $types = Config::get('commercial-vehicles.types');
-    $typeNames = Config::get('commercial-vehicles.typeNames');
-@endphp
-
 @section('topicTitle')
     <p class="text-[30px] leading-[38px] font-bold text-white
                 mobile:text-[20px] mobile:leading-[28px]">
@@ -58,13 +34,13 @@
                 <i class="fa fa-chevron-right hidden mobile:block"></i>
             </div>
         </div>
-       @include('components.modal-radio', ['data' => $typeNames, 'title' => 'Type', 'id' => 'deToggle'])
+       @include('components.modal-radio', ['data' => $data['typeNames'], 'title' => 'Type', 'id' => 'deToggle'])
     </div>
 @endsection
 
 @section('topic')
 
-                @foreach($types as $key=>$to)
+                @foreach($data['type'] as $key=>$to)
                     <div class=" bg-[#f0f1f1] px-[15px] pt-[15px] pb-[25px]
                     rounded-lg
                     xl:w-[15%] lg:w-[15%] md:w-[15%] sm:w-[15%]
@@ -74,7 +50,7 @@
                             <img src="{{$to}}"
                                  alt="property"
                                  class="w-[72px] mb-[10px]">
-                            <p class="text-img">{{$typeNames[$key]}}</p>
+                            <p class="text-img">{{$data['typeNames'][$key]}}</p>
                         </a>
                     </div>
                 @endforeach
@@ -101,7 +77,7 @@
 
         {{--         slides show--}}
         <div class="slides__commercial flex flex-row nowrap w-full h-fit">
-            @foreach($showSlide as $slide)
+            @foreach($data['showSlide'] as $slide)
                 <a href="http://www.carousell.sg" class="w-[50%] h-auto rounded-lg mx-[5px]">
                     <img src="{{$slide}}"
                          alt="img"
@@ -116,7 +92,7 @@
 @section('listedCar')
     <div class="listed__price6 overflow-hidden flex flex-row nowrap relative
         mobile:overflow-y-auto h-fit">
-        @foreach($listRentalCars as $key => $ca)
+        @foreach($data['listRentalCars'] as $key => $ca)
             @include('components.product', ['imgSrc' => $ca])
         @endforeach
     </div>
@@ -132,9 +108,9 @@
 @endsection
 
 @section('popularCar')
-    <div class="listed__price7 overflow-hidden flex flex-row nowrap relative
+    <div class="listed__price7 overflow-hidden flex flex-row nowrap relative h-fit
         mobile:overflow-y-auto">
-        @foreach($listRentalCars as $key => $ca)
+        @foreach($data['listRentalCars'] as $key => $ca)
             @include('components.product', ['imgSrc' => $ca])
         @endforeach
     </div>

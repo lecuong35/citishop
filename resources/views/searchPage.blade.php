@@ -1,25 +1,3 @@
-@php
-    $showBicycle = Config::get('products.bicycle');
-    $showCoffee = Config::get('products.coffeeTable');
-    $showLego = Config::get('products.lego');
-    $showIkea = Config::get('products.ikea');
-    $showBrompton = Config::get('products.brompton');
-    $showPlant = Config::get('products.plant');
-    $showCategories = Config::get('products.category');
-    $showSlash = Config::get('products.slashPrice');
-    $showRecommend = Config::get('products.recommendProduct');
-    $showSlide = Config::get('products.slide');
-    $cates = Config::get('products.categories');
-    $sorts = Config::get('products.sorts');
-    $brands = Config::get('products.brands');
-    $genders = Config::get('products.genders');
-    $types = Config::get('products.types');
-    $accessories = Config::get('products.accessories');
-    $conditions =  Config::get('products.conditions');
-    $index = 20;
-    $cateIndex = 14;
-    $cateId = 1;
-@endphp
 @extends('Layouts.app')
 
 @section('content')
@@ -108,7 +86,7 @@
                                    <i class="fa fa-search"></i>
                                </div>
                                <div class="relative">
-                                   @foreach($cates as $ca)
+                                   @foreach($data['categories'] as $ca)
                                        <div class="flex px-[16px] items-center justify-between
                                        border-[#c5c5c6] border-solid border-b-[1px]
                                        bg-white hover:bg-[#f0f0f1] py-[12px]" id="{{$ca}}"
@@ -173,7 +151,7 @@
                         border-solid border-[1px] border-[#c5c5c6]"
                                 style="display: none"
                                 id="sortFilterShow">
-                               @foreach($sorts as $ca)
+                               @foreach($data['sorts'] as $ca)
                                    <div class=" px-[10px] flex items-center
                                border-[#c5c5c6] border-solid border-b-[1px]
                                bg-white hover:bg-[#f0f0f1] py-[10px]" id="{{$ca}}">
@@ -218,7 +196,7 @@
                         border-solid border-[1px] border-[#c5c5c6]"
                             style="display: none"
                             id="brandFilterShow">
-                           @foreach($brands as $ca)
+                           @foreach($data['brands'] as $ca)
                                <div class=" px-[10px] flex items-center
                            border-[#c5c5c6] border-solid border-b-[1px]
                            bg-white hover:bg-[#f0f0f1] py-[10px]" id="{{$ca}}">
@@ -247,7 +225,7 @@
                     border-solid border-[1px] border-[#c5c5c6]"
                             style="display: none"
                             id="genderFilterShow">
-                           @foreach($genders as $ca)
+                           @foreach($data['genders'] as $ca)
                                <div class=" px-[10px] flex items-center
                            border-[#c5c5c6] border-solid border-b-[1px]
                            bg-white hover:bg-[#f0f0f1] py-[10px]" id="{{$ca}}">
@@ -276,7 +254,7 @@
                     border-solid border-[1px] border-[#c5c5c6]"
                             style="display: none"
                             id="typeFilterShow">
-                           @foreach($types as $ca)
+                           @foreach($data['types'] as $ca)
                                <div class=" px-[10px] flex items-center
                            border-[#c5c5c6] border-solid border-b-[1px]
                            bg-white hover:bg-[#f0f0f1] py-[10px]" id="{{$ca}}">
@@ -305,7 +283,7 @@
                     border-solid border-[1px] border-[#c5c5c6]"
                             style="display: none"
                             id="accessFilterShow">
-                           @foreach($accessories as $ca)
+                           @foreach($data['accessories'] as $ca)
                                <div class=" px-[10px] flex items-center
                            border-[#c5c5c6] border-solid border-b-[1px]
                            bg-white hover:bg-[#f0f0f1] py-[10px]" id="{{$ca}}">
@@ -334,7 +312,7 @@
                     border-solid border-[1px] border-[#c5c5c6]"
                             style="display: none"
                             id="conditionFilterShow">
-                           @foreach($conditions as $ca)
+                           @foreach($data['conditions'] as $ca)
                                <div class=" px-[10px] flex items-center
                            border-[#c5c5c6] border-solid border-b-[1px]
                            bg-white hover:bg-[#f0f0f1] py-[10px]" id="{{$ca}}">
@@ -377,7 +355,7 @@
          mobile:ring-0
         xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%]
         xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:mx-auto">
-        @foreach($items as $re)
+        @foreach($data['recommendProduct'] as $re)
             @include('components.product', ['imgSrc' => $re])
         @endforeach
     </div>

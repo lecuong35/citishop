@@ -330,7 +330,7 @@
                                   <div class="div-for-nothing">
                                   </div>
                               </div>
-                              <a href="https://www.carousell.sg"
+                              <a href="/info"
                                   class="flex gap-[10px] py-[10px] px-[10px]
                               hover:bg-[#f0f0f1] hover:text-[#008f79]">
                                   <div>
@@ -340,7 +340,7 @@
                                       Profile
                                   </p>
                               </a>
-                              <a href="https://www.carousell.sg"
+                              <a href="/edit-profile"
                                   class="flex gap-[10px] px-[10px] py-[10px]
                               hover:bg-[#f0f0f1] hover:text-[#008f79]">
                                   <div>
@@ -350,7 +350,7 @@
                                       Settings
                                   </p>
                               </a>
-                              <a href="https://www.carousell.sg"
+                              <a href="/purchase-progress"
                                   class="flex gap-[10px] px-[10px] py-[10px]
                               hover:bg-[#f0f0f1] hover:text-[#008f79]">
                                  <img src="https://mweb-cdn.karousell.com/build/my-purchases-3J6hHnKqGL.svg"
@@ -359,7 +359,7 @@
                                       My Purchases
                                   </p>
                               </a>
-                              <a href="https://www.carousell.sg"
+                              <a href="/sales-start"
                                   class="flex gap-[10px] px-[10px] py-[10px]
                               hover:bg-[#f0f0f1] hover:text-[#008f79]">
                                   <img src="https://mweb-cdn.karousell.com/build/my-sales-3XOQDPjKCc.svg"

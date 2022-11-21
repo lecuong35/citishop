@@ -47,7 +47,7 @@
                     </p>
                 </a>
 
-                @foreach($showCategories as $ca)
+                @foreach($data['category'] as $ca)
                     <div class="cars items-center justify-between h-[73px]
                                     border-t-[1px] border-solid border-[#f0f1f1]">
                         <div class="grid grid-cols-[367px_73px]">

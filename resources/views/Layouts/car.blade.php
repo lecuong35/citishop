@@ -21,7 +21,7 @@
 
 @php
     $headerSearch = Config::get('used-cars.headerSearch');
-    $headerLinks = Config::get('used-cars.headerLinks');
+    $headerLinks = Config::Get('used-cars.headerLinks');
     $body = Config::get('used-cars.body');
     $depreciation = Config::get('used-cars.depreciation');
     $trending = Config::get('used-cars.trending');

@@ -1,5 +1,5 @@
 <div style="display: none;" id="{{$id}}"
-     class="absolute top-[50px] left-0 w-[300px] h-[70px] overflow-y-auto
+     class="absolute top-[50px] left-0 w-[300px] h-[150px] overflow-y-auto
                         bg-white shadow-xl rounded-lg
                         mobile:fixed mobile:w-full mobile:h-full
                         mobile:top-0 mobile:rounded-none mobile:z-[9]

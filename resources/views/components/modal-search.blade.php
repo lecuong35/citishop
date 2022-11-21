@@ -27,7 +27,7 @@
                 <p class="text-[20px] leading-[28px] text-[#2c2c2d] font-bold">
                     Sort
                 </p>
-                @foreach($sorts as $ca)
+                @foreach($data['sorts'] as $ca)
                     <div class="flex items-center
                                        bg-white hover:bg-[#f0f0f1] py-[5px]" id="{{$ca}}">
                         <input type="radio" name="sort"
@@ -55,11 +55,11 @@
                         <i class="fa fa-chevron-right"></i>
                     </div>
                 </div>
-                @include('components.modal-checkbox', ['id' => 'brandModal', 'title' => 'Brand', 'data' => $brands])
+                @include('components.modal-checkbox', ['id' => 'brandModal', 'title' => 'Brand', 'data' => $data['brands']])
 
                 <div class="flex flex-col w-full mt-[8px]
                 mobile:hidden">
-                    @foreach($brands as $ren)
+                    @foreach($data['brands'] as $ren)
                         <div class="mb-[8px] flex items-center gap-[10px] w-full">
                             <input type="checkbox" id="{{$ren}}" class="accent-[#026859] w-[18px] h-[18px]">
                             <label for="{{$ren}}">{{$ren}}</label>
@@ -71,7 +71,7 @@
                 <p class="text-[20px] leading-[28px] text-[#2c2c2d] font-bold">
                     Gender
                 </p>
-                @foreach($genders as $ca)
+                @foreach($data['genders'] as $ca)
                     <div class=" px-[10px] flex items-center
                                     bg-white hover:bg-[#f0f0f1] py-[5px]" id="{{$ca}}">
                         <input type="checkbox" name="brand"
@@ -86,7 +86,7 @@
                 <p class="text-[20px] leading-[28px] text-[#2c2c2d] font-bold">
                     Type
                 </p>
-                @foreach($types as $ca)
+                @foreach($data['types'] as $ca)
                     <div class=" px-[10px] flex items-center
                                     bg-white hover:bg-[#f0f0f1] py-[5px]" id="{{$ca}}">
                         <input type="checkbox" name="brand"
@@ -101,7 +101,7 @@
                 <p class="text-[20px] leading-[28px] text-[#2c2c2d] font-bold">
                     Accessories
                 </p>
-                @foreach($accessories as $ca)
+                @foreach($data['accessories'] as $ca)
                     <div class=" px-[10px] flex items-center
                                     bg-white hover:bg-[#f0f0f1] py-[5px]" id="{{$ca}}">
                         <input type="checkbox" name="brand"
@@ -116,7 +116,7 @@
                 <p class="text-[20px] leading-[28px] text-[#2c2c2d] font-bold">
                     Condition
                 </p>
-                @foreach($conditions as $ca)
+                @foreach($data['conditions'] as $ca)
                     <div class=" px-[10px] flex items-center
                                     bg-white hover:bg-[#f0f0f1] py-[5px]" id="{{$ca}}">
                         <input type="checkbox" name="brand"

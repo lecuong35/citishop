@@ -50,7 +50,7 @@
                     <i class="fa fa-chevron-right hidden mobile:block"></i>
                 </div>
             </div>
-            @include('components.modal-checkbox', ['data' => $rentalCarNames, 'title' => 'Type', 'id' => 'bodyToggle'])
+            @include('components.modal-checkbox', ['data' => $data['rentalCarNames'], 'title' => 'Type', 'id' => 'bodyToggle'])
         </div>
     @endsection
 
@@ -76,13 +76,13 @@
                     <i class="fa fa-chevron-right hidden mobile:block"></i>
                 </div>
             </div>
-            @include('components.modal-radio', ['data' => $options, 'title' => 'Options', 'id' => 'deToggle'])
+            @include('components.modal-radio', ['data' => $data['options'], 'title' => 'Options', 'id' => 'deToggle'])
         </div>
     @endsection
 
     @section('topic')
         <div class="w-full flex justify-between">
-            @foreach($rentalTopics as $key=>$to)
+            @foreach($data['rentalTopics'] as $key=>$to)
                 <div class="hover:translate-y-[-7px] transition-transform">
                     <a href="http://www.carousell.sg"
                        class="property flex flex-col justify-center
@@ -95,7 +95,7 @@
                                  class="w-[72px] h-[72px]"
                                  style="border-radius: 50%">
                         </div>
-                        <p class="text-img">{{$rentalCarNames[$key]}}</p>
+                        <p class="text-img">{{$data['rentalCarNames'][$key]}}</p>
                     </a>
                 </div>
             @endforeach
@@ -113,7 +113,7 @@
     @section('listedCar')
         <div class="listed__price1 overflow-hidden flex flex-row nowrap relative
         mobile:overflow-y-auto">
-            @foreach($listRentalCars as $key => $ca)
+            @foreach($data['listRentalCars'] as $key => $ca)
                 @include('components.product', ['imgSrc' => $ca])
             @endforeach
         </div>
@@ -131,7 +131,7 @@
     @section('popularCar')
             <div class="listed__price2 overflow-hidden flex flex-row nowrap relative
         mobile:overflow-y-auto">
-                @foreach($listRentalCars as $key => $ca)
+                @foreach($data['listRentalCars'] as $key => $ca)
                     @include('components.product', ['imgSrc' => $ca])
                 @endforeach
             </div>
