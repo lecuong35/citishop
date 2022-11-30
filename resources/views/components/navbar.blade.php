@@ -412,7 +412,9 @@
             text-white font-bold text-[16px] leading-[24px]
             xl:block lg:block md:block sm:hidden
             mobile:hidden">
-              Sell
+             <a href="/sell">
+                 Sell
+             </a>
           </button>
       </div>
 

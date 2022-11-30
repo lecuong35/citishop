@@ -17,6 +17,53 @@ function clickToggleFlexCol(id) {
         ele.style.display = "none";
 }
 
+function clickShowHide(id, id1, id2) {
+    let ele = document.getElementById(id);
+    let show = document.getElementById(id1);
+    let hide = document.getElementById(id2);
+
+    if(show.style.display === "none") {
+        show.style.display = "block";
+        hide.style.display = "none";
+    }
+    else {
+        show.style.display = "none";
+        hide.style.display = "block";
+    }
+
+    if(ele.style.display === "none") {
+        ele.style.display = "flex";
+        ele.style.flexDirection = "column";
+    }
+    else
+        ele.style.display = "none";
+}
+
+function clickAddImg(id1, id2, id3, id4, id5, id6) {
+    let ele1 = document.getElementById(id1);
+    let ele2 = document.getElementById(id2);
+    let ele3 = document.getElementById(id3);
+    let ele4 = document.getElementById(id4);
+    let ele5 = document.getElementById(id5)
+    let ele6 = document.getElementById(id6);
+
+    if(ele1.style.display === "none") {
+        ele1.style.display = "block";
+        ele2.style.display = "flex";
+        ele3.style.display = "block";
+        ele4.style.display = "none";
+        ele5.style.display = "none";
+        ele6.style.display = "flex";
+    }
+    else {
+        ele1.style.display = "none";
+        ele2.style.display = "none";
+        ele3.style.display = "none";
+        ele4.style.display = "block";
+        ele5.style.display = "block";
+    }
+}
+
 function chooseBody(id1, id2) {
     let text = document.getElementById(id1+'Text');
     let ele = document.getElementById(id2);
@@ -74,5 +121,78 @@ function blurInputText(id1, id2) {
 
     if(input.value === "") {
         placeholder.style.transform = "translate(0, 0)";
+    }
+}
+
+function clickCondition(buttonId, textId) {
+    let button = document.getElementById(buttonId);
+    let text = document.getElementById(textId);
+
+}
+
+function chooseCategory(text1, text2) {
+    let cate = document.getElementById("cate");
+    let cateText = document.getElementById("cateText");
+    document.getElementById("category").style.display = "none";
+    document.getElementById("formContent").style.display = "block";
+
+    cate.innerHTML = text1.toString();
+    cateText.innerHTML = text2.toString();
+}
+
+function chooseBrand(content, id, valueId) {
+    if(document.getElementById(valueId)) {
+        let brand = document.getElementById(valueId);
+        let box = document.getElementById(id);
+
+        brand.value =  content.toString();
+        box.style.display = "none";
+    }
+}
+
+function chooseFee(content, id, valueId, feeId) {
+    let brand = document.getElementById(valueId);
+    let box = document.getElementById(id);
+    let fee = document.getElementById(feeId);
+
+    brand.value =  content.toString();
+    box.style.display = "none";
+
+    if(fee.style.display === "none") {
+        fee.style.display = "block";
+    }
+    else {
+        fee.style.display = "none";
+    }
+}
+
+function chooseOptionals(content, id, checkId, boxId) {
+    let optionals = document.getElementById("optionalChosen");
+    let item = document.getElementById(id);
+    let check = document.getElementById(checkId);
+    let box = document.getElementById(boxId);
+
+    if(item.checked === true) {
+        optionals.value +=  content.toString() + ", ";
+        check.style.display = "block";
+        box.style.backgroundColor = "#cce9e4";
+    }
+    else {
+        optionals.value = optionals.value.replace(content, "");
+        optionals.value = optionals.value.replace(",", "");
+        check.style.display = "none";
+        box.style.backgroundColor = "#fff";
+    }
+
+}
+
+function forSales() {
+    let sale = document.getElementById("forSale");
+    let textSale = document.getElementById("salePrice");
+
+    if(sale.checked) {
+        textSale.style.display = "block";
+    } else {
+        textSale.style.display = "none";
     }
 }

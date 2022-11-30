@@ -29,6 +29,8 @@ class Controller extends BaseController
     public $brandSearch;
     public $listingStatus;
     public $countries;
+    public $filters;
+    public $optionals;
 
 //    home
     public $category;
@@ -97,6 +99,8 @@ class Controller extends BaseController
         $this->brandSearch = config('products.footerLinks');
         $this->listingStatus = config('products.listingStatus');
         $this->countries = config('products.countries');
+        $this->filters = config('filter-topic.Audio');
+        $this->optionals = config('products.optionals');
 
         $this->category = config('products.category');
         $this->categoryNames= config('products.categoryNames');
@@ -121,6 +125,7 @@ class Controller extends BaseController
         $this->slideProducts = config('products.slide-products');
         $this->similarProduct = config('products.similar-product');
         $this->itemSearchFor = config('products.item-search-for');
+
 
         $this->type = config('commercial-vehicles.types');
         $this->typeNames = config('commercial-vehicles.typeNames');
@@ -157,6 +162,8 @@ class Controller extends BaseController
             'brandSearch' =>$this->brandSearch,
             'listingStatus' => $this->listingStatus,
             'countries' => $this->countries,
+            'filter' => $this->filters,
+            'optionals' => $this->optionals,
 
             //    home
             'category' =>$this->category,

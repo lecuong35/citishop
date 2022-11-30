@@ -86,4 +86,8 @@ class UserController extends Controller
     public function salesCancelled() {
         return view('users.sales-cancelled')->with('data', $this->data);
     }
+
+    public function sell() {
+        return view('users.sell')->with('data', $this->data);
+    }
 }

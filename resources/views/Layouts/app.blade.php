@@ -13,7 +13,9 @@
 <button class="bg-[#ff2636] rounded-sm px-[26px] py-[14px] rounded-[30px]
             text-white font-bold text-[18px] leading-[24px] hidden
             mobile:fixed top-[90%] right-[15px] mobile:block z-[9]">
-    Sell +
+   <a href="/sell">
+       Sell +
+   </a>
 </button>
 {{-- navbar --}}
 @include('components.navbar')

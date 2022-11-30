@@ -72,3 +72,5 @@ Route::get('sales-progress', [UserController::class, 'salesProgress']);
 Route::get('sales-completed', [UserController::class, 'salesCompleted']);
 Route::get('sales-returns', [UserController::class, 'salesReturns']);
 Route::get('sales-cancelled', [UserController::class, 'salesCancelled']);
+
+Route::get('sell', [UserController::class, 'sell']);

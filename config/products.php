@@ -412,5 +412,14 @@ return [
         'Malaysia',
         'Philippines',
         'Singapore',
+    ],
+
+    'optionals' => [
+        'Noise Cancelling',
+        'Volume Limiting',
+        'Wired',
+        'Wireless',
+        'Surround Sound',
+        'With Microphone',
     ]
 ];
