@@ -40,7 +40,7 @@ mobile:w-full mobile:p-0">
                     </div>
                     <div class="w-full">
                         @foreach($data['category'] as $key => $ca)
-                            <div class="w-full p-[12px] flex items-center justify-between
+                            <div class="w-full flex items-center justify-between
                             h-[48px] p-[12px] mobile:px-0 mobile:border-[#f0f0f1]
                             border-b-[1px] border-solid border-[#c5c5c6]"
                             id="filter{{$key}}" onclick="clickToggleFlexCol('filterBox{{$key}}')">
@@ -72,7 +72,7 @@ mobile:w-full mobile:p-0">
                                     @foreach($data['filter'] as $fil)
                                         <div class="h-[48px] py-[12px] px-[32px] hover:cursor-pointer
                                     border-solid border-b-[1px] border-[#c5c5c6] mobile:border-[#f0f0f1]"
-                                             onclick="chooseCategory( '{{$fil}}','in {{$data['categoryNames'][$key]}}')">
+                                             onclick="chooseCategory( '{{$fil}}','in {{$data[categoryNames][$key]}}')">
                                             <p>
                                                 {{$fil}}
                                             </p>
@@ -231,7 +231,7 @@ mobile:w-full mobile:p-0">
 
 
                 </div>
-                <div id="brands" class="mobile:fixed mobile:top-0 mobile:left-0 mobile:top-0 z-[13]
+                <div id="brands" class="mobile:fixed mobile:left-0 mobile:top-0 z-[13]
                 mobile:bg-white mobile:w-full mobile:h-full" style="display: none">
                     <div class="hidden mobile:flex items-center justify-center h-[60px] bg-white fixed shadow-md mobile:w-full">
                         <p class="text-[18px] leading-[32px] font-medium">
