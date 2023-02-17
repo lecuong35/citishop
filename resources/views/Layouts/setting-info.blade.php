@@ -15,10 +15,8 @@
 
 <div class="mt-[112px] mx-auto flex justify-center">
     <div class="flex flex-col w-[208px] min-w-[208px] mobile:hidden">
-        @include('components.user.navigate-setting-button', ['content' => 'Edit profile', 'link' => '/edit-profile'])
-        @include('components.user.navigate-setting-button', ['content' => 'Change password', 'link' => '/change-password'] )
-        @include('components.user.navigate-setting-button', ['content' => 'Notification', 'link' => '/setting-notification'])
-        @include('components.user.navigate-setting-button', ['content' => 'Data and privacy', 'link' => '/data-privacy'])
+        @include('components.user.navigate-setting-button', ['content' => 'Cập nhật thông tin', 'link' => 'http://127.0.0.1:8000/user/edit/profile', 'id'=>'profile'])
+        @include('components.user.navigate-setting-button', ['content' => 'Đổi mật khẩu', 'link' => 'http://127.0.0.1:8000/user/edit/password', 'id'=>'password'] )
     </div>
 
     <div>
@@ -28,6 +26,6 @@
 
 @include('components.footer')
 
-<script src="./js/utilities-functions.js"></script>
+<script src="../../js/utilities-functions.js"></script>
 </body>
 </html>

@@ -24,57 +24,77 @@
 </head>
 <body>
     <div class="flex justify-center border-b m-auto">
-        <img class="w-48 py-4" src="https://mweb-cdn.karousell.com/build/carousell-logo-title-2Nnf7YFiNk.svg" alt="">
+        <img class="w-48 py-4" src="https://firebasestorage.googleapis.com/v0/b/citishop-laravel.appspot.com/o/images%2F44e5f3319a9649f082f1d8079cad63d5.png?alt=media&token=01cd7adf-6c1c-42ac-9615-3b72305e022d" alt="">
     </div>
     <section class="min-h-screen flex md:items-center max-md:mt-5 justify-center m-auto overflow-y-hidden">
         <div class="md:w-[472px] px-5 m-auto relative">
-            <h1 class="font-bold text-4xl text-center">Login</h1>
-            <div>
-                <button id="login-face" data-modal-target="#modal-login" class="w-full px-6 py-2 mt-12 rounded-md bg-[#4567b2]">
-                    <span class="font-semibold text-white text-lg"><i class="fa-brands fa-square-facebook"></i> Login with Facebook</span>
-                </button>
-            </div>
-            <p class="text-center text-lg mt-4 text-[#008f79]">OR</p>
-            <form action="/auth/login" method="post" class="space-y-6 py-6">
+            <h1 class="font-bold text-4xl text-center">ĐĂNG NHẬP</h1>
+            <form action="/user/login" method="POST" class="space-y-6 py-6">
                 @csrf
-                @method('post')
+                @if(session('password'))
+                    <p class="text-center text-[red]">
+                        {{session('password')}}
+                    </p>
+                @endif
                 <div>
-                <input type="text"
+                    <input type="email"
                        class="form-control block w-full px-4 py-2
                        text-xl font-normal text-gray-700 bg-white bg-clip-padding
                        border border-solid border-gray-300 rounded transition ease-in-out m-0
                        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                        id="exampleFormControlInput2"
                        name="email"
-                       placeholder="Username or email"/>
+                       placeholder="Email"/>
+                    @error('email')
+                            <p class="mt-[8px] text-[14px] leading-[22px]" style="color: red;">
+                                {{$errors->first('email')}}
+                            </p>
+                        @enderror
                 </div>
                 <div>
-                    <input type="text"
+                    <input type="password"
                            class="form-control block w-full px-4 py-2
                            text-xl font-normal text-gray-700 bg-white bg-clip-padding
                            border border-solid border-gray-300 rounded transition ease-in-out
                            m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                            name="password"
-                           id="exampleFormControlInput3" placeholder="Password"/>
+                           id="exampleFormControlInput3" placeholder="Mật khẩu"/>
+                           @error('password')
+                            <p class="mt-[8px] text-[14px] leading-[22px]" style="color: red;">
+                                {{$errors->first('password')}}
+                            </p>
+                        @enderror
                     <div class="mt-1">
-                        <button type="reset">
-                            <span class="text-[#57585a] text-lg hover:text-[#008f79] hover:underline" >Forgot password ?</span>
+                        <button>
+                            <a href="/user/forget-password"
+                            class="text-[#57585a] text-lg hover:text-[#008f79] hover:underline" >Quên mật khẩu?</a>
                         </button>
+                    </div>
+
+                    <div>
+                        @error('unauthorization')
+                            <p class="mt-[8px] text-[14px] leading-[22px]" style="color: red;">
+                                {{$errors->first('unauthorization')}}
+                            </p>
+                        @enderror
                     </div>
                 </div>
                 <div class="text-center">
                     <button class="w-full px-6 py-3 rounded-md bg-[#c5c5c6] transition hover:bg-sky-600 focus:bg-[#008f79]"
                             type="submit"
                             id="login">
-                        <span class="font-semibold text-white text-lg">Login</span>
+                        <span class="font-semibold text-white text-lg">Đăng nhập</span>
                     </button>
-                    <div class="mt-5">
-                        <span class="text-lg">Don't have an account?<a class="text-[#57585a] font-semibold" href="#"> sign up</a></span>
+                    <div class="mt-5 flex flex-col">
+                        <span class="text-lg">Bạn chưa có tài khoản?<a class="text-[#57585a] font-semibold" href="/user/register">Tạo tài khoản mới</a></span>
+                        <span class="text-lg">
+                            <a href="/admin/login" 
+                            class="text-[#57585a] font-semibold" href="/register">Admin đăng nhập</a>
+                        </span>
                     </div>
                 </div>
             </form>
         </div>
-        @include('auth.components.login-face')
 
     </section>
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>

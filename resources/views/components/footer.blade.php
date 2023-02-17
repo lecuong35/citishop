@@ -4,7 +4,7 @@
     $topicSearch = Config::get('used-cars.topicSearch');
 @endphp
 <div class="footer mobile:w-[98%] mx-auto mobile:mt-[20px]">
-    <div class="footer__banner mobile:hidden">
+    <!-- <div class="footer__banner mobile:hidden">
         <div class="banner__items flex justify-center items-center mb-[100px]">
             <img src="https://storage.googleapis.com/carousell-sl/homescreens/main/carousell_qrcode_cats.png"
             class="">
@@ -70,7 +70,7 @@
             </div>
         @endforeach
     </div>
-    <hr>
+    <hr> -->
 
     <div class="end grid grid-cols-[60%_40%] gap-[10px] mt-[20px]
     xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-full
@@ -127,4 +127,4 @@
     }
 </style>
 
-<script src="./js/footer.js"></script>
+<script type="text/javascript" src='http://127.0.0.1:8000/js/footer.js'></script>

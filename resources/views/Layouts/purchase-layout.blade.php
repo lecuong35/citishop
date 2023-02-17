@@ -19,39 +19,91 @@
             mobile:fixed mobile:top-0 mobile:left-0
             mobile:bg-white mobile:h-full mobile:w-full">
 {{--    header   --}}
-    <div class="pt-[144px] mobile:pt-0">
+    <div class="pt-[60px] mobile:pt-0">
         <div class="mobile:h-[64px] mobile:flex mobile:items-center
-        mobile:justify-center">
-            <div class="hidden mobile:block absolute top-[20px] left-[20px]">
-                <a href="/">
+        mobile:justify-center mobile:shadow-md">
+            <div class="hidden mobile:block absolute top-[24px] left-[20px]">
+                <a href="http://127.0.0.1:8000/home">
                     <i class="fas fa-arrow-left fa-lg" style="opacity: 0.5"></i>
                 </a>
             </div>
             <p class="text-[30px] leading-[38px] text-[#2c2c2d] font-bold
             mobile:text-[16px] mobile:leading-[24px]">
-                My purchases
+                Các đơn của khách
             </p>
         </div>
-        <div class="flex mt-[24px] mobile:mt-0
-        mobile:px-[28px] mobile:gap-[24px]
-        mobile:overflow-x-auto">
-            <a href="/purchase-progress">
-                @include('components.user.navigate-button', ['content' => 'In progress'])
+        <div class="flex mt-[24px] mobile:mt-0 mobile:justify-between
+        mobile:px-[12px] mobile:gap-[24px]">
+            <a href="http://127.0.0.1:8000/user/bill/revenue-statistic">
+                @include('components.user.navigate-button', ['content' => 'Doanh thu', 'id'=>'sales'])
             </a>
-            <a href="/purchase-completed">
-                @include('components.user.navigate-button', ['content' => 'Completed'])
+            <a href="http://127.0.0.1:8000/user/bill">
+                @include('components.user.navigate-button', ['content' => 'Đang chờ xử lý', 'id'=>'progress'])
             </a>
-            <a href="/purchase-returns">
-                @include('components.user.navigate-button', ['content' => 'Returns'])
+            <a href="http://127.0.0.1:8000/user/bill/completed">
+                @include('components.user.navigate-button', ['content' => 'Đã xác nhận', 'id'=>'completed'])
             </a>
-            <a href="/purchase-cancelled">
-                @include('components.user.navigate-button', ['content' => 'Cancelled'])
+            <a href="http://127.0.0.1:8000/user/bill/returned">
+                @include('components.user.navigate-button', ['content' => 'Trả lại', 'id'=>'returned'])
+            </a>
+            <a href="http://127.0.0.1:8000/user/bill/cancelled">
+                @include('components.user.navigate-button', ['content' => 'Đã hủy', 'id'=>'cancelled'])
             </a>
         </div>
         <hr>
     </div>
 {{--    content   --}}
-    @yield('content')
+    <div>
+        @if(!empty($bills))
+
+            @if(Session::has('success'))
+                <div class="px-[16px] py-[8px] bg-[#6d6f]">
+                    <p class="text-white">
+                            {{Session::get('success')}}
+                        </p>
+                </div>
+            @endif
+            @if(Session::has('error'))
+                <div class="px-[16px] py-[8px] bg-[#ea7676]">
+                    <p class="text-white">
+                            {{Session::get('error')}}
+                        </p>
+                </div>
+            @endif
+            <table class="w-full ml-[30px]">
+                <thead class="bg-white border-b mobile:hidden">
+                    <tr>
+                        <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 ">
+                            ID
+                        </th>
+                        <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 ">
+                            Tiêu đề bài đăng
+                        </th>
+                        <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 ">
+                            Giá
+                        </th>
+                        <th class="text-sm font-bold text-gray-900 px-6 py-4 ">
+                            Khách hàng
+                        </th>
+                        <th class="text-sm font-bold text-gray-900 px-6 py-4 ">
+                            Thời gian nhận
+                        </th>
+                        <th class="text-sm font-bold text-gray-900 px-6 py-4 ">
+                            Xem chi tiết
+                        </th>
+                        <th class="text-sm font-bold text-gray-900 px-6 py-4 ">
+                            Xử lý
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                   @yield('content')
+                </tbody>
+            </table>
+            @else
+            @include('components.user.no-product')
+        @endif
+    </div>
 </div>
 <script src="./js/utilities-functions.js"></script>
 </body>

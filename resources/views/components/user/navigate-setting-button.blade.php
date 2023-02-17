@@ -4,7 +4,8 @@
                           focus:font-medium
                           text-[16px] leading-[24px] text-[#2c2c2d]
                             hover:text-[#008f79]
-                            focus:text-[#008f79]">
+                            focus:text-[#008f79]"
+        id="{{$id}}">
         {{$content}}
     </button>
 </a>

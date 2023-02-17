@@ -18,6 +18,7 @@
         today.getDate() - 1,
         "Today",
     ];
+    
     const dataBarChart = {
         labels: labelsBarChart,
         datasets: [

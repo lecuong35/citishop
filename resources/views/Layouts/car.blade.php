@@ -11,7 +11,7 @@
 </head>
 
 <body class="font-roboto">
-<button class="bg-[#ff2636] rounded-sm px-[26px] py-[14px] rounded-[30px]
+<button class="bg-[#ff2636]  px-[26px] py-[14px] rounded-[30px]
             text-white font-bold text-[18px] leading-[24px] hidden
             mobile:fixed top-[90%] right-[15px] mobile:block z-[9]">
     Sell +
@@ -38,7 +38,7 @@
 
 {{-- content --}}
     {{-- header search --}}
-    <div class=" hidden flex overflow-x-auto
+    <div class=" hidden overflow-x-auto
         mobile:mt-[25px] fixed z-[9]
          mobile:flex bg-white w-full">
         @foreach($headerSearch as $key => $he)
@@ -54,7 +54,7 @@
     </div>
 
     {{--    searchs   --}}
-    <div class="mt-[150px] xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full
+    <div class="mt-[150px] xl:ml-[15%] lg:ml-[5%] md:ml-[5%]
         mobile:ml-0 mobile:mt-[100px]
         rounded-xl mobile:rounded-none
         mobile:flex-col
@@ -250,7 +250,7 @@
     {{-- Explore Cars--}}
     <div class="relative mx-auto pt-[20px] mb-[50px]
    mt-[30px] mobile:mt-[50px]
-    xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%]
+    xl:w-[70%] lg:w-[90%] md:w-[90%] mobile:w-[96%]
     xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:mx-auto">
         <div class="listed__title flex justify-between items-center mb-[30px]">
             <p class="text-[24px] leading-[32px] font-bold">
@@ -281,7 +281,7 @@
     {{-- Search Topics--}}
     <div  class="relative mx-auto pt-[20px] mb-[50px]
    mt-[30px] mobile:mt-[50px] mobile:hidden
-    xl:w-[70%] lg:w-[90%] md:w-[90%] sm:w-full mobile:w-[96%]
+    xl:w-[70%] lg:w-[90%] md:w-[90%] mobile:w-[96%]
     xl:ml-[15%] lg:ml-[5%] md:ml-[5%] sm:w-full mobile:mx-auto">
         <div class="flex justify-between gap-[10px]">
             @foreach($topicSearch as $to)

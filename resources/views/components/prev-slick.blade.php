@@ -1,4 +1,4 @@
-<i class="fas fa-chevron-left z-[9]
+<i class="fas fa-chevron-left z-[3]
            flex items-center justify-center
            w-[36px] h-[36px]
            absolute left-[-15px] top-[50%]

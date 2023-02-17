@@ -112,15 +112,19 @@ function clickInputText(id1, id2) {
     let input = document.getElementById(id1);
     let placeholder = document.getElementById(id2);
 
-    placeholder.style.transform = "translate(0px, -25px)";
+    if(input.value != '') {
+        placeholder.style.transform = "translate(0px, 0px)";
+    }
+    else placeholder.style.transform = "translate(0px, -5px)";
 }
+
 
 function blurInputText(id1, id2) {
     let input = document.getElementById(id1);
     let placeholder = document.getElementById(id2);
 
-    if(input.value === "") {
-        placeholder.style.transform = "translate(0, 0)";
+    if(input.value == '') {
+        placeholder.style.transform = "translate(0, 25px)";
     }
 }
 
@@ -130,24 +134,18 @@ function clickCondition(buttonId, textId) {
 
 }
 
-function chooseCategory(text1, text2) {
-    let cate = document.getElementById("cate");
-    let cateText = document.getElementById("cateText");
-    document.getElementById("category").style.display = "none";
-    document.getElementById("formContent").style.display = "block";
+// function chooseCategory(text1, text2) {
+//     let cate = document.getElementById("cate");
+//     let cateText = document.getElementById("cateText");
+//     document.getElementById("category").style.display = "none";
+//     document.getElementById("formContent").style.display = "block";
 
-    cate.innerHTML = text1.toString();
-    cateText.innerHTML = text2.toString();
-}
+//     cate.innerHTML = text1.toString();
+//     cateText.innerHTML = text2.toString();
+// }
 
-function chooseBrand(content, id, valueId) {
-    if(document.getElementById(valueId)) {
-        let brand = document.getElementById(valueId);
-        let box = document.getElementById(id);
-
-        brand.value =  content.toString();
-        box.style.display = "none";
-    }
+function chooseBrand(id) {
+      console.log('ok');
 }
 
 function chooseFee(content, id, valueId, feeId) {
@@ -194,5 +192,62 @@ function forSales() {
         textSale.style.display = "block";
     } else {
         textSale.style.display = "none";
+    }
+}
+
+function changeValueImage(imgId, inputId) {
+    let image = document.getElementById(imgId);
+    let [file] = document.getElementById(inputId).files;
+
+    if(file) {
+        image.setAttribute('src', URL.createObjectURL(file));
+    }
+
+    if(document.getElementById('buttonSave')) {
+        document.getElementById("buttonSave").style.backgroundColor = "#008f79";
+        document.getElementById("buttonSave").style.cursor = "pointer";
+    }
+
+    if(document.getElementById('buttonSaved')) {
+        document.getElementById("buttonSaved").style.color = "#008f79";
+        document.getElementById("buttonSaved").style.cursor = "pointer";
+    }
+}
+
+function chooseCategory(cate, cateText, category_id) {
+    let cateBox = document.getElementById('cate');
+    let cateTextBox = document.getElementById('cateText');
+    let category_idBox = document.getElementById('category_id');
+
+    cateBox.innerHTML = cate.toString();
+    cateTextBox.innerHTML = cateText.toString();
+    category_idBox.setAttribute('value', category_id);
+
+    document.getElementById('category').style.display = "none";
+}
+
+function chooseKinds(id, index, sizeOfKind) {
+    let ele = document.getElementById(id);
+
+    if(ele.style.display === "none") {
+        ele.style.display = "flex";
+        ele.style.flexDirection = "column";
+    }
+    else
+        ele.style.display = "none";
+
+    for(let i = 0; i < sizeOfKind; i++) {
+        let brand = ('brand' + i).toString();
+        if(document.getElementById(brand)) {
+            let kind = document.getElementById(brand);
+            if(i == index) {
+                kind.style.display = "block";
+                kind.setAttribute('name', 'brand_id');
+            }
+            else{
+                kind.style.display = "none";
+                kind.setAttribute('name', '')
+            }
+        }
     }
 }

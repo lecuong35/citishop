@@ -19,42 +19,86 @@
             mobile:fixed mobile:top-0 mobile:left-0
             mobile:bg-white mobile:h-full mobile:w-full">
     {{--    header   --}}
-    <div class="pt-[144px] mobile:pt-0">
+    <div class="pt-[60px] mobile:pt-0">
         <div class="mobile:h-[64px] mobile:flex mobile:items-center
-        mobile:justify-center">
-            <div class="hidden mobile:block absolute top-[20px] left-[20px]">
-                <a href="/">
+        mobile:justify-center mobile:shadow-md">
+            <div class="hidden mobile:block absolute left-[20px]">
+                <a href="http://127.0.0.1:8000/home">
                     <i class="fas fa-arrow-left fa-lg" style="opacity: 0.5"></i>
                 </a>
             </div>
             <p class="text-[30px] leading-[38px] text-[#2c2c2d] font-bold
             mobile:text-[16px] mobile:leading-[24px]">
-                My sales
+                Các sản phẩm của tôi
             </p>
         </div>
         <div class="flex mt-[24px] mobile:mt-0
         mobile:px-[28px] mobile:gap-[24px]
         mobile:overflow-x-auto">
-            <a href="/sales-start">
-                @include('components.user.navigate-button', ['content' => 'To start'])
+            <a href="http://127.0.0.1:8000/user/sale">
+                @include('components.user.navigate-button', ['content' => 'Đang chờ duyệt', 'id' => 'start'])
             </a>
-            <a href="/sales-progress">
-                @include('components.user.navigate-button', ['content' => 'In progress'])
+            <a href="http://127.0.0.1:8000/user/sale/completed">
+                @include('components.user.navigate-button', ['content' => 'Đã xét duyệt', 'id' => 'progress'])
             </a>
-            <a href="/sales-completed">
-                @include('components.user.navigate-button', ['content' => 'Completed'])
-            </a>
-            <a href="/sales-returns">
-                @include('components.user.navigate-button', ['content' => 'Returns'])
-            </a>
-            <a href="/sales-cancelled">
-                @include('components.user.navigate-button', ['content' => 'Cancelled'])
+            <a href="http://127.0.0.1:8000/user/sale/returned">
+                @include('components.user.navigate-button', ['content' => 'Bị xóa', 'id' => 'returns'])
             </a>
         </div>
         <hr>
     </div>
     {{--    content   --}}
-    @yield('content')
+    <div>
+        @if(!empty($posts))
+
+            @if(Session::has('success'))
+                <div class="px-[16px] py-[8px] bg-[#6d6f]">
+                    <p class="text-white">
+                            {{Session::get('success')}}
+                        </p>
+                </div>
+            @endif
+            @if(Session::has('error'))
+                <div class="px-[16px] py-[8px] bg-[#ea7676]">
+                    <p class="text-white">
+                            {{Session::get('error')}}
+                        </p>
+                </div>
+            @endif
+            <table class="w-full ml-[30px]">
+                <thead class="bg-white border-b mobile:hidden">
+                    <tr>
+                        <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 ">
+                            ID
+                        </th>
+                        <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 ">
+                            Ảnh sản phẩm
+                        </th>
+                        <th scope="col" class="text-sm font-bold text-gray-900 px-6 py-4 ">
+                            Tieu đề bài đăng
+                        </th>
+                        <th class="text-sm font-bold text-gray-900 px-6 py-4 ">
+                            Giá sản phẩm
+                        </th>
+                        <th class="text-sm font-bold text-gray-900 px-6 py-4 ">
+                            Loại sản phẩm
+                        </th>
+                        <th class="text-sm font-bold text-gray-900 px-6 py-4 ">
+                            Xem chi tiết
+                        </th>
+                        <th class="text-sm font-bold text-gray-900 px-6 py-4 ">
+                            Thao tác
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                   @yield('content')
+                </tbody>
+            </table>
+        @else
+            @include('components.user.no-product')
+        @endif
+    </div>
 </div>
 <script src="./js/utilities-functions.js"></script>
 </body>

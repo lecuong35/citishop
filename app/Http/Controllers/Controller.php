@@ -6,6 +6,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 
 class Controller extends BaseController
 {
@@ -31,6 +33,7 @@ class Controller extends BaseController
     public $countries;
     public $filters;
     public $optionals;
+    public $logo;
 
 //    home
     public $category;
@@ -101,6 +104,7 @@ class Controller extends BaseController
         $this->countries = config('products.countries');
         $this->filters = config('filter-topic.Audio');
         $this->optionals = config('products.optionals');
+        $this->logo = "https://firebasestorage.googleapis.com/v0/b/citishop-laravel.appspot.com/o/Images%2Fcitishop.png?alt=media&token=9b84870d-1d93-4eed-bfbd-769c7b74597e";
 
         $this->category = config('products.category');
         $this->categoryNames= config('products.categoryNames');
@@ -140,12 +144,12 @@ class Controller extends BaseController
         $this->motors = config('motorcycles.motors');
         $this->motorTopics = config('motorcycles.motorTopics');
 
-        $this->transmissions = config('parallel.transmissions');
+        $this->transmission = config('parallel.transmissions');
 
         $this->options = config('rental-cars.options');
         $this->rentalTopics = config('rental-cars.rentalTopics');
         $this->rentalCarNames = config('rental-cars.rentalCarNames');
-        $this->listRentalCars = config('rental-cars.listRentalCars');
+        $this->listRentalCar = config('rental-cars.listRentalCars');
 
         $this->data = ['headerSearch'  => $this->headerSearch,
             'body' => $this->body,
@@ -164,6 +168,7 @@ class Controller extends BaseController
             'countries' => $this->countries,
             'filter' => $this->filters,
             'optionals' => $this->optionals,
+            'logo' => $this->logo,
 
             //    home
             'category' =>$this->category,
@@ -207,13 +212,13 @@ class Controller extends BaseController
             'motorTopics' => $this->motorTopics,
 
             //parallel
-            'transmissions' => $this->transmissions,
+            'transmissions' => $this->transmission,
 
             //rental car
             'options' => $this->options,
             'rentalTopics' => $this->rentalTopics,
             'rentalCarNames' => $this->rentalCarNames,
-            'listRentalCars' => $this->listRentalCars,
+            'listRentalCars' => $this->listRentalCar,
         ];
 
         return $this->data;

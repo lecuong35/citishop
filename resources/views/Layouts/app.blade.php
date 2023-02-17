@@ -10,9 +10,9 @@
     <title>Carousell</title>
 </head>
 <body class="font-roboto">
-<button class="bg-[#ff2636] rounded-sm px-[26px] py-[14px] rounded-[30px]
+<button class="bg-[#ff2636] rounded-sm px-[26px] py-[14px] 
             text-white font-bold text-[18px] leading-[24px] hidden
-            mobile:fixed top-[90%] right-[15px] mobile:block z-[9]">
+            mobile:fixed top-[90%] right-[15px] mobile:block z-[9]" id="sellButton">
    <a href="/sell">
        Sell +
    </a>
@@ -23,7 +23,6 @@
 
 
 @yield('content')
-
 
 @include('components.footer')
 </body>
